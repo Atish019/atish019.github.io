@@ -2,6 +2,7 @@ import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { SkillsSection } from './components/SkillsSection';
+import { ResearchSection } from './components/ResearchSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { ContactSection } from './components/ContactSection';
 
@@ -12,6 +13,7 @@ function App() {
       <AboutSection />
       <ProjectsSection />
       <SkillsSection />
+      <ResearchSection />
       <ExperienceSection />
       <ContactSection />
     </div>

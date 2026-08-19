@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import profileImg from '../assets/profile.png';
+import profileImg from '../assets/profile.webp';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -187,10 +187,10 @@ export const AboutSection: React.FC = () => {
                   className="text-3xl sm:text-4xl font-light text-[#D4AF37] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
-                  8+
+                  15+
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
-                  AI / ML Projects
+                  Shipped AI Projects
                 </span>
               </div>
             </motion.div>

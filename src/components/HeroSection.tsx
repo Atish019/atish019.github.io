@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import watermarkImg from '../assets/watermark.png';
-import profileImg from '../assets/profile.png';
+import watermarkImg from '../assets/watermark.webp';
+import profileImg from '../assets/profile.webp';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -32,6 +32,7 @@ const navItems = [
   { name: 'ABOUT', href: '#about' },
   { name: 'PROJECTS', href: '#work' },
   { name: 'SKILLS', href: '#skills' },
+  { name: 'RESEARCH', href: '#research' },
   { name: 'EXPERIENCE', href: '#experience' },
   { name: 'CONTACT', href: '#contact' },
 ];
@@ -39,6 +40,7 @@ const navItems = [
 export const HeroSection: React.FC = () => {
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
   const [isHovered, setIsHovered] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -149,7 +151,7 @@ export const HeroSection: React.FC = () => {
 
           {/* Navigation Links */}
           <nav
-            className="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] tracking-[0.28em] font-light uppercase text-[#C4B5A5] absolute left-1/2 -translate-x-1/2"
+            className="hidden lg:flex items-center space-x-6 xl:space-x-9 text-[10.5px] xl:text-[11px] tracking-[0.22em] xl:tracking-[0.26em] font-light uppercase text-[#C4B5A5] absolute left-1/2 -translate-x-1/2 whitespace-nowrap"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             {navItems.map((item) => (
@@ -171,7 +173,7 @@ export const HeroSection: React.FC = () => {
             href="#contact"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="group flex items-center space-x-2 text-[11px] tracking-[0.24em] font-light uppercase py-2 px-4 border border-[#8C6D4F]/50 hover:border-[#D4AF37] text-[#EAD8C7] transition-all duration-300 backdrop-blur-sm ml-auto md:ml-0"
+            className="group hidden sm:flex items-center space-x-2 text-[11px] tracking-[0.24em] font-light uppercase py-2 px-4 border border-[#8C6D4F]/50 hover:border-[#D4AF37] text-[#EAD8C7] transition-all duration-300 backdrop-blur-sm ml-auto lg:ml-0"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             <span>LET&apos;S TALK</span>
@@ -179,7 +181,63 @@ export const HeroSection: React.FC = () => {
               ↗
             </span>
           </a>
+
+          {/* Mobile menu toggle */}
+          <button
+            type="button"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="lg:hidden flex flex-col justify-center items-end w-9 h-9 ml-4 group"
+          >
+            <span
+              className={`block h-[1px] bg-[#EAD8C7] transition-all duration-300 ${
+                menuOpen ? 'w-6 translate-y-[3px] rotate-45' : 'w-6'
+              }`}
+            />
+            <span
+              className={`block h-[1px] bg-[#EAD8C7] transition-all duration-300 mt-[5px] ${
+                menuOpen ? 'w-6 -translate-y-[3px] -rotate-45' : 'w-4 group-hover:w-6'
+              }`}
+            />
+          </button>
         </header>
+
+        {/* Mobile menu panel */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.nav
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:hidden absolute top-full left-0 right-0 mt-3 mx-6 sm:mx-12 z-40 rounded-sm border border-[#8C6D4F]/40 bg-black/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] pointer-events-auto overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent" />
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="block px-6 py-4 text-[11px] tracking-[0.28em] font-light uppercase text-[#C4B5A5] border-b border-[#8C6D4F]/15 last:border-b-0 hover:bg-[#100D0B] hover:text-[#F7E7C4] transition-colors duration-300"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  {item.name}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="block px-6 py-4 text-[11px] tracking-[0.28em] font-light uppercase text-[#F7E7C4] bg-[#16120E] hover:bg-[#1A1510] transition-colors duration-300"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                LET&apos;S TALK ↗
+              </a>
+            </motion.nav>
+          )}
+        </AnimatePresence>
 
         {/* Main Hero Row */}
         <div className="relative flex flex-col md:flex-row items-center justify-between w-full pt-4 pb-2 my-auto">

@@ -82,7 +82,7 @@ export const ContactSection: React.FC = () => {
                   className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  05 / CONTACT
+                  06 / CONTACT
                 </span>
                 <div className="w-16 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
               </motion.div>
@@ -128,6 +128,18 @@ export const ContactSection: React.FC = () => {
                 >
                   {EMAIL}
                 </a>
+
+                <div className="pt-4">
+                  <span className="block text-[9.5px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] mb-2">
+                    // BASED IN
+                  </span>
+                  <span
+                    className="text-sm text-[#E8D7C5]"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    Lucknow, India &middot; open to remote
+                  </span>
+                </div>
               </div>
 
               {/* Social links */}

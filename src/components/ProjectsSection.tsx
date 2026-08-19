@@ -21,6 +21,14 @@ interface SideProject {
   tech: string[];
 }
 
+interface ArchiveProject {
+  number: string;
+  title: string;
+  category: string;
+  githubUrl: string;
+  tech: string[];
+}
+
 const projects: Project[] = [
   {
     number: '01',
@@ -127,6 +135,63 @@ const sideProjects: SideProject[] = [
       'An end-to-end custom object detection system covering model training, inference API development, Docker containerization, and production deployment on AWS.',
     githubUrl: 'https://github.com/Atish019/Custom_Training_YOLOv11_From_Scratch',
     tech: ['YOLOv11', 'FastAPI', 'Docker', 'AWS'],
+  },
+  {
+    number: '09',
+    title: 'Credit Card Fraud Detection',
+    category: 'MACHINE LEARNING / MLOPS',
+    description:
+      'An end-to-end fraud detection pipeline that handles severe class imbalance with SMOTE and benchmarks multiple models. XGBoost reached 97.61% accuracy, tracked through MLflow and shipped as a Dockerized dashboard.',
+    githubUrl: 'https://github.com/Atish019/credit_card_fraud_detection',
+    tech: ['XGBoost', 'MLflow', 'DVC', 'Docker'],
+  },
+  {
+    number: '10',
+    title: 'AI Lecture Transcriber',
+    category: 'GENERATIVE AI / NLP',
+    description:
+      'Turns any YouTube lecture into structured, subject-specific study notes by pairing transcript extraction with Google Gemini summarisation — hours of video compressed into readable revision material.',
+    githubUrl: 'https://github.com/Atish019/AI_Lecture_Transcriber_YouTube_to_Notes_Converter',
+    tech: ['Google Gemini', 'YouTube API', 'Streamlit'],
+  },
+];
+
+const archiveProjects: ArchiveProject[] = [
+  {
+    number: '11',
+    title: 'AI-Powered RAG Document Chatbot',
+    category: 'GENERATIVE AI / RAG',
+    githubUrl: 'https://github.com/Atish019/AI-Powered-RAG-Document-Chatbot',
+    tech: ['RAG', 'Groq', 'LLaMA 3', 'Streamlit'],
+  },
+  {
+    number: '12',
+    title: 'Spark Data Lake',
+    category: 'BIG DATA / DATA ENGINEERING',
+    githubUrl: 'https://github.com/Atish019/spark-data-lake',
+    tech: ['Apache Spark', 'MinIO', 'Trino', 'Docker'],
+  },
+  {
+    number: '13',
+    title: 'Pneumonia X-Ray Classification',
+    category: 'COMPUTER VISION / DEEP LEARNING',
+    githubUrl:
+      'https://github.com/Atish019/Pneumonia_X-Ray_Classification_using_Identity-Mapping_ResFormer',
+    tech: ['CNNs', 'Identity Mapping', 'PyTorch'],
+  },
+  {
+    number: '14',
+    title: 'Vehicle Detection & Counting',
+    category: 'COMPUTER VISION',
+    githubUrl: 'https://github.com/Atish019/Vehicle-Detection-and-Counting-Using-OpenCV',
+    tech: ['OpenCV', 'Python'],
+  },
+  {
+    number: '15',
+    title: 'Movie Recommender System',
+    category: 'RECOMMENDATION SYSTEMS',
+    githubUrl: 'https://github.com/Atish019/movie-recommender-system',
+    tech: ['Scikit-learn', 'Pandas', 'Similarity Search'],
   },
 ];
 
@@ -373,6 +438,95 @@ export const ProjectsSection: React.FC = () => {
             </motion.a>
           ))}
         </div>
+
+        {/* ================= ARCHIVE ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex items-center space-x-4 mt-24 mb-8"
+        >
+          <span
+            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            ARCHIVE
+          </span>
+          <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
+        </motion.div>
+
+        <div className="border-t border-[#8C6D4F]/20">
+          {archiveProjects.map((project, idx) => (
+            <motion.a
+              key={project.title}
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.55, delay: idx * 0.06 }}
+              className="group grid grid-cols-1 sm:grid-cols-12 items-center gap-y-2 gap-x-6 py-6 px-2 sm:px-4 border-b border-[#8C6D4F]/20 hover:bg-[#100D0B] hover:px-4 sm:hover:px-6 transition-all duration-400"
+            >
+              <span className="sm:col-span-1 text-[10px] font-mono tracking-[0.2em] text-[#8C6D4F] group-hover:text-[#D4AF37] transition-colors">
+                {project.number}
+              </span>
+
+              <h4
+                className="sm:col-span-4 text-2xl sm:text-[27px] font-normal tracking-wide uppercase leading-none text-white group-hover:text-[#F7E7C4] transition-colors"
+                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+              >
+                {project.title}
+              </h4>
+
+              <span
+                className="sm:col-span-3 text-[10px] font-medium tracking-[0.2em] uppercase text-[#A8988B] group-hover:text-[#C4B5A5] transition-colors"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                {project.category}
+              </span>
+
+              <div className="sm:col-span-3 flex flex-wrap gap-2">
+                {project.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="px-2.5 py-1 text-[9.5px] font-medium tracking-[0.14em] uppercase rounded-sm border border-[#8C6D4F]/30 text-[#C4B5A5] group-hover:border-[#D4AF37]/50 group-hover:text-[#E8D7C5] transition-all duration-300"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              <span className="sm:col-span-1 hidden sm:block text-right text-xs text-[#8C6D4F] group-hover:text-[#D4AF37] group-hover:translate-x-1 transition-all duration-300">
+                &#8599;
+              </span>
+            </motion.a>
+          ))}
+        </div>
+
+        {/* All repos link */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center mt-16"
+        >
+          <a
+            href="https://github.com/Atish019?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center space-x-3 px-8 py-4 border border-[#8C6D4F]/50 bg-[#100D0B] hover:border-[#D4AF37] hover:bg-[#16120E] text-[#E8DFD8] hover:text-[#F7E7C4] text-[11px] font-medium tracking-[0.25em] uppercase transition-all duration-300"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            <span>EXPLORE ALL REPOSITORIES</span>
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              &#8599;
+            </span>
+          </a>
+        </motion.div>
 
       </div>
     </section>
