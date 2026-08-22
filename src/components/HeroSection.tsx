@@ -146,7 +146,7 @@ export const HeroSection: React.FC = () => {
             className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-[#EAD8C7] hover:opacity-75 transition-opacity"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            ATISH.
+            IIITian ATISH
           </a>
 
           {/* Navigation Links */}
@@ -193,14 +193,12 @@ export const HeroSection: React.FC = () => {
             className="lg:hidden flex flex-col justify-center items-end w-9 h-9 ml-4 group"
           >
             <span
-              className={`block h-[1px] bg-[#EAD8C7] transition-all duration-300 ${
-                menuOpen ? 'w-6 translate-y-[3px] rotate-45' : 'w-6'
-              }`}
+              className={`block h-[1px] bg-[#EAD8C7] transition-all duration-300 ${menuOpen ? 'w-6 translate-y-[3px] rotate-45' : 'w-6'
+                }`}
             />
             <span
-              className={`block h-[1px] bg-[#EAD8C7] transition-all duration-300 mt-[5px] ${
-                menuOpen ? 'w-6 -translate-y-[3px] -rotate-45' : 'w-4 group-hover:w-6'
-              }`}
+              className={`block h-[1px] bg-[#EAD8C7] transition-all duration-300 mt-[5px] ${menuOpen ? 'w-6 -translate-y-[3px] -rotate-45' : 'w-4 group-hover:w-6'
+                }`}
             />
           </button>
         </header>

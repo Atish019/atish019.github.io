@@ -13,23 +13,23 @@ interface RouteStop {
 const journey: RouteStop[] = [
   {
     id: '01',
-    year: '2025',
-    title: 'AI FOUNDATIONS INTERN',
-    organization: 'EDUNET FOUNDATION',
+    year: 'AUG 2024 - 2026',
+    title: 'M.SC. AI & ML',
+    organization: 'IIIT LUCKNOW',
     description:
-      'Built and deployed AI applications including LLM-based chatbots, RAG systems, and multi-agent applications, served through FastAPI and Streamlit with vector database integration.',
+      'Postgraduate study focused on Artificial Intelligence, Machine Learning, Deep Learning, Natural Language Processing (NLP), Computer Vision, Generative AI, Large Language Models (LLMs), Transformers, Retrieval-Augmented Generation (RAG), Reinforcement Learning, Data Structures & Algorithms, Data Mining, Big Data Analytics, MLOps, Model Deployment, Computer Networks, Database Management Systems, Cloud Computing, Software Engineering, and Advanced Backend Engineering.',
   },
   {
     id: '02',
-    year: 'AUG 2024 - PRESENT',
-    title: 'M.SC. ARTIFICIAL INTELLIGENCE & ML',
-    organization: 'IIIT LUCKNOW',
+    year: '2025',
+    title: 'AI INTERN',
+    organization: 'EDUNET FOUNDATION',
     description:
-      'Postgraduate study focused on Artificial Intelligence, Machine Learning, Deep Learning, NLP, Computer Vision, and Generative AI.',
+      'Built and deployed AI applications including LLM-based chatbots, RAG systems, and multi-agent applications using Python, Docker, PostgreSQL, DuckDB, vector databases, LangChain, and modern AI/LLM frameworks.',
   },
   {
     id: '03',
-    year: '2024',
+    year: '2025',
     title: 'AMAZON ML CHALLENGE - AIR 503',
     organization: 'AMAZON',
     description:
@@ -49,7 +49,7 @@ const journey: RouteStop[] = [
     title: 'B.SC. MATHEMATICS (HONOURS)',
     organization: 'PATLIPUTRA UNIVERSITY, PATNA',
     description:
-      'Undergraduate study in Mathematics, building the analytical and mathematical foundation behind the AI and Machine Learning work above.',
+        'Undergraduate study in Mathematics covering Real Analysis, Linear Algebra, Abstract Algebra, Calculus, Differential Equations, Probability Theory, Numerical Analysis, Set Theory, Vector Analysis, Linear Programming, Number Theory, Analytical Geometry, and Mechanics.',
   },
 ];
 
@@ -73,7 +73,7 @@ export const ExperienceSection: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#D4AF37]/[0.03] rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto w-full relative z-10">
-        
+
         {/* Eyebrow Header */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -114,10 +114,10 @@ export const ExperienceSection: React.FC = () => {
 
         {/* Minimalist Route Map */}
         <div className="relative w-full">
-          
+
           {/* Background Track */}
           <div className="absolute left-[19px] md:left-[140px] top-4 bottom-8 w-[1px] bg-[#8C6D4F]/20" />
-          
+
           {/* Animated Gold Track */}
           <motion.div
             style={{ height: lineHeight }}
@@ -162,15 +162,15 @@ export const ExperienceSection: React.FC = () => {
                   >
                     {stop.title}
                   </h3>
-                  
-                  <span 
+
+                  <span
                     className="block text-[10px] font-medium tracking-[0.2em] uppercase text-[#8C6D4F] mb-2"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     {stop.organization}
                   </span>
-                  
-                  <p 
+
+                  <p
                     className="text-xs sm:text-[13px] font-light text-[#A8988B] leading-[1.7] max-w-lg group-hover:text-[#D5CBC0] transition-colors"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
