@@ -1,9 +1,124 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap');
 @import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Theme palette. Every colour in the UI resolves to one of these
+   custom properties, so flipping [data-theme] repaints the whole site.
+   ------------------------------------------------------------------ */
+:root,
+:root[data-theme="dark"] {
+  --p-ink:        #000000;
+  --p-ink-deep:   #050403;
+  --p-surface:    #0A0806;
+  --p-surface-1:  #100D0B;
+  --p-surface-2:  #16120E;
+  --p-surface-3:  #1F1914;
+
+  --p-fg:         #FFFFFF;
+  --p-fg-2:       #E8DFD8;
+  --p-fg-3:       #D5CBC0;
+  --p-fg-4:       #A8988B;
+  --p-fg-5:       #605448;
+
+  --p-gold:       #D4AF37;
+  --p-gold-lite:  #F3DBB3;
+  --p-gold-soft:  #DFBE8A;
+  --p-bronze:     #8C6D4F;
+  --p-bronze-deep:#9B7640;
+  --p-rust:       #E0876F;
+
+  --p-grad-1:     #F7E7C4;
+  --p-grad-2:     #C99E5D;
+  --p-grad-3:     #543B1A;
+  --p-grad-4:     #342410;
+
+  --p-shadow-rgb: 0, 0, 0;
+  --p-glow-rgb:   212, 175, 55;
+  --p-spot-rgb:   255, 255, 255;
+  --p-cursor:     rgba(235, 215, 195, 0.95);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  /* Light mode inverts the ramp: the page is the warmest tone and panels
+     sit *above* it in brightness, so cards still read as raised. */
+  --p-ink:        #F4EFE6;
+  --p-ink-deep:   #F8F4EC;
+  --p-surface:    #FFFDF8;
+  --p-surface-1:  #FFFFFF;
+  --p-surface-2:  #F3EADA;
+  --p-surface-3:  #E9DECA;
+
+  --p-fg:         #100C07;
+  --p-fg-2:       #241C13;
+  --p-fg-3:       #45382A;
+  --p-fg-4:       #6A5946;
+  --p-fg-5:       #96836C;
+
+  --p-gold:       #8F6F16;
+  --p-gold-lite:  #5A4416;
+  --p-gold-soft:  #A9873A;
+  --p-bronze:     #8A6A47;
+  --p-bronze-deep:#7A5C1E;
+  --p-rust:       #B4543A;
+
+  --p-grad-1:     #3E2C10;
+  --p-grad-2:     #7A5C1E;
+  --p-grad-3:     #A9873A;
+  --p-grad-4:     #C9AE72;
+
+  --p-shadow-rgb: 92, 74, 48;
+  --p-glow-rgb:   143, 111, 22;
+  --p-spot-rgb:   90, 68, 22;
+  --p-cursor:     rgba(58, 44, 20, 0.9);
+  color-scheme: light;
+}
+
+/* Expose the palette to Tailwind. `inline` makes utilities emit the
+   var() reference itself, so the [data-theme] override takes effect. */
+@theme inline {
+  --color-ink:         var(--p-ink);
+  --color-ink-deep:    var(--p-ink-deep);
+  --color-surface:     var(--p-surface);
+  --color-surface-1:   var(--p-surface-1);
+  --color-surface-2:   var(--p-surface-2);
+  --color-surface-3:   var(--p-surface-3);
+
+  --color-fg:          var(--p-fg);
+  --color-fg-2:        var(--p-fg-2);
+  --color-fg-3:        var(--p-fg-3);
+  --color-fg-4:        var(--p-fg-4);
+  --color-fg-5:        var(--p-fg-5);
+
+  --color-gold:        var(--p-gold);
+  --color-gold-lite:   var(--p-gold-lite);
+  --color-gold-soft:   var(--p-gold-soft);
+  --color-bronze:      var(--p-bronze);
+  --color-bronze-deep: var(--p-bronze-deep);
+  --color-rust:        var(--p-rust);
+
+  --color-grad-1:      var(--p-grad-1);
+  --color-grad-2:      var(--p-grad-2);
+  --color-grad-3:      var(--p-grad-3);
+  --color-grad-4:      var(--p-grad-4);
+}
+
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: #000;
+  background-color: var(--p-ink);
+}
+
+/* Theme swap should feel like a dissolve, not a flash. */
+html.theme-transition,
+html.theme-transition * {
+  transition: background-color 420ms ease, border-color 420ms ease,
+              color 420ms ease, fill 420ms ease, stroke 420ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-transition,
+  html.theme-transition * { transition: none !important; }
 }

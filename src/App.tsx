@@ -5,10 +5,11 @@ import { SkillsSection } from './components/SkillsSection';
 import { ResearchSection } from './components/ResearchSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { ContactSection } from './components/ContactSection';
+import { FloatingThemeToggle } from './components/ThemeToggle';
 
 function App() {
   return (
-    <div className="w-full min-h-screen bg-black text-[#E8DFD8] selection:bg-[#cbb59d] selection:text-black">
+    <div className="w-full min-h-screen bg-ink text-fg-2 selection:bg-fg-3 selection:text-ink">
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
@@ -16,6 +17,7 @@ function App() {
       <ResearchSection />
       <ExperienceSection />
       <ContactSection />
+      <FloatingThemeToggle />
     </div>
   );
 }

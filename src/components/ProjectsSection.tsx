@@ -199,11 +199,11 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="work"
-      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black pt-20 pb-32 px-6 sm:px-12 lg:px-20"
+      className="relative w-full bg-ink text-fg-2 font-sans selection:bg-fg-3 selection:text-ink pt-20 pb-32 px-6 sm:px-12 lg:px-20"
     >
       {/* Studio Ambient Glows */}
-      <div className="absolute top-1/4 left-1/3 w-[36rem] h-[36rem] bg-[#D4AF37]/5 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#8C6D4F]/5 rounded-full blur-[170px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/3 w-[36rem] h-[36rem] bg-gold/5 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-bronze/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
 
@@ -216,12 +216,12 @@ export const ProjectsSection: React.FC = () => {
           className="flex items-center space-x-4 mb-5"
         >
           <span
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
+            className="text-[11px] font-medium tracking-[0.35em] uppercase text-gold"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             02 / FEATURED WORK
           </span>
-          <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
+          <div className="w-20 h-[1px] bg-gradient-to-r from-gold/80 via-bronze/40 to-transparent" />
         </motion.div>
 
         {/* Section Headline */}
@@ -236,16 +236,16 @@ export const ProjectsSection: React.FC = () => {
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
-            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-fg via-fg-3 to-fg-5 drop-shadow-[0_4px_12px_rgba(var(--p-shadow-rgb),0.8)]">
               SELECTED WORKS.
             </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-grad-1 via-grad-2 to-grad-3 drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
               SHIPPED INTELLIGENCE.
             </span>
           </h2>
 
           <p
-            className="text-xs sm:text-sm font-light text-[#A8988B] max-w-sm mt-4 md:mt-0 leading-relaxed"
+            className="text-xs sm:text-sm font-light text-fg-4 max-w-sm mt-4 md:mt-0 leading-relaxed"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             Scroll to unfold each system. Every project below runs end-to-end &mdash; from model to API to deployment.
@@ -264,20 +264,20 @@ export const ProjectsSection: React.FC = () => {
         >
           {projects.map((project) => (
             <ScrollStackItem key={project.title}>
-              <div className="relative w-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]">
+              <div className="relative w-full rounded-2xl border border-bronze/50 bg-surface p-8 sm:p-12 shadow-[0_25px_70px_rgba(var(--p-shadow-rgb),0.98)] group overflow-hidden transition-colors duration-500 hover:border-gold">
 
                 {/* Top Gold Border Light Flare */}
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/80 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gold/80 to-transparent" />
 
                 {/* Corner Minimal L-Brackets */}
-                <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
-                <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
-                <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
-                <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
+                <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold/60 group-hover:border-gold transition-colors" />
+                <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold/60 group-hover:border-gold transition-colors" />
+                <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-gold/60 group-hover:border-gold transition-colors" />
+                <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-gold/60 group-hover:border-gold transition-colors" />
 
                 {/* Big Background Watermark Number */}
                 <span
-                  className="absolute -bottom-6 -right-3 text-8xl sm:text-9xl font-bold text-[#EAD8C7]/5 select-none pointer-events-none leading-none"
+                  className="absolute -bottom-6 -right-3 text-8xl sm:text-9xl font-bold text-fg-2/5 select-none pointer-events-none leading-none"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   {project.number}
@@ -290,23 +290,23 @@ export const ProjectsSection: React.FC = () => {
                   <div className="lg:col-span-7 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center space-x-3 mb-4">
-                        <span className="text-xs font-mono font-bold text-[#D4AF37]">
+                        <span className="text-xs font-mono font-bold text-gold">
                           {project.number} //
                         </span>
-                        <span className="text-[10.5px] font-mono tracking-[0.25em] uppercase text-[#A8988B]">
+                        <span className="text-[10.5px] font-mono tracking-[0.25em] uppercase text-fg-4">
                           {project.category}
                         </span>
                       </div>
 
                       <h3
-                        className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white mb-4 group-hover:text-[#F7E7C4] transition-colors uppercase leading-[0.9]"
+                        className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-fg mb-4 group-hover:text-grad-1 transition-colors uppercase leading-[0.9]"
                         style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                       >
                         {project.title}
                       </h3>
 
                       <p
-                        className="text-xs sm:text-sm md:text-[14px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide mb-8 max-w-2xl"
+                        className="text-xs sm:text-sm md:text-[14px] font-light text-fg-3 leading-[1.85] tracking-wide mb-8 max-w-2xl"
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                       >
                         {project.description}
@@ -314,11 +314,11 @@ export const ProjectsSection: React.FC = () => {
                     </div>
 
                     {/* Tech Stack Pills */}
-                    <div className="flex flex-wrap gap-2 pt-6 border-t border-[#8C6D4F]/25">
+                    <div className="flex flex-wrap gap-2 pt-6 border-t border-bronze/25">
                       {project.tech.map((t) => (
                         <span
                           key={t}
-                          className="px-3 py-1 text-[10px] font-medium tracking-[0.16em] uppercase rounded-sm border border-[#8C6D4F]/40 bg-[#16120E] text-[#E8D7C5] group-hover:border-[#D4AF37]/50 transition-all duration-300"
+                          className="px-3 py-1 text-[10px] font-medium tracking-[0.16em] uppercase rounded-sm border border-bronze/40 bg-surface-2 text-fg-2 group-hover:border-gold/50 transition-all duration-300"
                           style={{ fontFamily: "'Montserrat', sans-serif" }}
                         >
                           {t}
@@ -328,20 +328,20 @@ export const ProjectsSection: React.FC = () => {
                   </div>
 
                   {/* Right Column (5 Cols) */}
-                  <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 lg:pl-6 lg:border-l lg:border-[#8C6D4F]/25">
+                  <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 lg:pl-6 lg:border-l lg:border-bronze/25">
                     <div className="space-y-3">
-                      <span className="text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#8C6D4F] block mb-2">
+                      <span className="text-[9.5px] font-mono tracking-[0.25em] uppercase text-bronze block mb-2">
                         // SYSTEM METRICS
                       </span>
                       {project.metrics.map((m) => (
                         <div
                           key={m.label}
-                          className="p-3.5 rounded-sm border border-[#8C6D4F]/25 bg-[#050403] flex items-center justify-between"
+                          className="p-3.5 rounded-sm border border-bronze/25 bg-ink-deep flex items-center justify-between"
                         >
-                          <span className="text-[10px] font-mono text-[#A8988B]">
+                          <span className="text-[10px] font-mono text-fg-4">
                             {m.label}
                           </span>
-                          <span className="text-[11px] font-mono font-medium text-[#F7E7C4]">
+                          <span className="text-[11px] font-mono font-medium text-grad-1">
                             {m.value}
                           </span>
                         </div>
@@ -352,7 +352,7 @@ export const ProjectsSection: React.FC = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-[#8C6D4F] bg-[#16120E] hover:border-[#D4AF37] hover:bg-[#D4AF37] text-[#EAD8C7] hover:text-black text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]"
+                      className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-bronze bg-surface-2 hover:border-gold hover:bg-gold text-fg-2 hover:text-ink text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(var(--p-glow-rgb),0.1)]"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     >
                       <span>VIEW ON GITHUB</span>
@@ -375,12 +375,12 @@ export const ProjectsSection: React.FC = () => {
           className="flex items-center space-x-4 mt-24 mb-10"
         >
           <span
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
+            className="text-[11px] font-medium tracking-[0.35em] uppercase text-gold"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             ALSO BUILT
           </span>
-          <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
+          <div className="w-20 h-[1px] bg-gradient-to-r from-gold/80 via-bronze/40 to-transparent" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -395,40 +395,40 @@ export const ProjectsSection: React.FC = () => {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.7, delay: idx * 0.08 }}
               whileHover={{ y: -5 }}
-              className="relative flex flex-col p-7 sm:p-8 rounded-sm border border-[#8C6D4F]/35 bg-[#100D0B]/85 backdrop-blur-xl overflow-hidden group transition-all duration-500 hover:border-[#D4AF37]/80 hover:shadow-[0_16px_45px_rgba(212,175,55,0.14)]"
+              className="relative flex flex-col p-7 sm:p-8 rounded-sm border border-bronze/35 bg-surface-1/85 backdrop-blur-xl overflow-hidden group transition-all duration-500 hover:border-gold/80 hover:shadow-[0_16px_45px_rgba(var(--p-glow-rgb),0.14)]"
             >
               {/* Corner pins */}
-              <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#D4AF37]/40 group-hover:border-[#D4AF37] transition-colors duration-300" />
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#D4AF37]/40 group-hover:border-[#D4AF37] transition-colors duration-300" />
+              <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gold/40 group-hover:border-gold transition-colors duration-300" />
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/40 group-hover:border-gold transition-colors duration-300" />
 
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-[#A8988B] group-hover:text-[#D4AF37] transition-colors">
+                <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-fg-4 group-hover:text-gold transition-colors">
                   {project.number} // {project.category}
                 </span>
-                <span className="text-xs text-[#8C6D4F] group-hover:text-[#D4AF37] transition-all duration-300 group-hover:translate-x-0.5">
+                <span className="text-xs text-bronze group-hover:text-gold transition-all duration-300 group-hover:translate-x-0.5">
                   ↗
                 </span>
               </div>
 
               <h3
-                className="text-3xl sm:text-4xl font-normal tracking-wide text-white mb-3 group-hover:text-[#F7E7C4] transition-colors uppercase leading-none"
+                className="text-3xl sm:text-4xl font-normal tracking-wide text-fg mb-3 group-hover:text-grad-1 transition-colors uppercase leading-none"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 {project.title}
               </h3>
 
               <p
-                className="text-xs sm:text-[13px] font-light text-[#A8988B] leading-[1.75] mb-6 group-hover:text-[#D5CBC0] transition-colors"
+                className="text-xs sm:text-[13px] font-light text-fg-4 leading-[1.75] mb-6 group-hover:text-fg-3 transition-colors"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 {project.description}
               </p>
 
-              <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-[#8C6D4F]/20">
+              <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-bronze/20">
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="px-3 py-1 text-[10px] font-medium tracking-[0.16em] uppercase rounded-sm border border-[#8C6D4F]/35 bg-[#171310] text-[#E8D7C5] group-hover:border-[#D4AF37]/50 transition-all duration-300"
+                    className="px-3 py-1 text-[10px] font-medium tracking-[0.16em] uppercase rounded-sm border border-bronze/35 bg-surface-2 text-fg-2 group-hover:border-gold/50 transition-all duration-300"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     {t}
@@ -448,15 +448,15 @@ export const ProjectsSection: React.FC = () => {
           className="flex items-center space-x-4 mt-24 mb-8"
         >
           <span
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
+            className="text-[11px] font-medium tracking-[0.35em] uppercase text-gold"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             ARCHIVE
           </span>
-          <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
+          <div className="w-20 h-[1px] bg-gradient-to-r from-gold/80 via-bronze/40 to-transparent" />
         </motion.div>
 
-        <div className="border-t border-[#8C6D4F]/20">
+        <div className="border-t border-bronze/20">
           {archiveProjects.map((project, idx) => (
             <motion.a
               key={project.title}
@@ -467,21 +467,21 @@ export const ProjectsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.55, delay: idx * 0.06 }}
-              className="group grid grid-cols-1 sm:grid-cols-12 items-center gap-y-2 gap-x-6 py-6 px-2 sm:px-4 border-b border-[#8C6D4F]/20 hover:bg-[#100D0B] hover:px-4 sm:hover:px-6 transition-all duration-400"
+              className="group grid grid-cols-1 sm:grid-cols-12 items-center gap-y-2 gap-x-6 py-6 px-2 sm:px-4 border-b border-bronze/20 hover:bg-surface-1 hover:px-4 sm:hover:px-6 transition-all duration-400"
             >
-              <span className="sm:col-span-1 text-[10px] font-mono tracking-[0.2em] text-[#8C6D4F] group-hover:text-[#D4AF37] transition-colors">
+              <span className="sm:col-span-1 text-[10px] font-mono tracking-[0.2em] text-bronze group-hover:text-gold transition-colors">
                 {project.number}
               </span>
 
               <h4
-                className="sm:col-span-4 text-2xl sm:text-[27px] font-normal tracking-wide uppercase leading-none text-white group-hover:text-[#F7E7C4] transition-colors"
+                className="sm:col-span-4 text-2xl sm:text-[27px] font-normal tracking-wide uppercase leading-none text-fg group-hover:text-grad-1 transition-colors"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 {project.title}
               </h4>
 
               <span
-                className="sm:col-span-3 text-[10px] font-medium tracking-[0.2em] uppercase text-[#A8988B] group-hover:text-[#C4B5A5] transition-colors"
+                className="sm:col-span-3 text-[10px] font-medium tracking-[0.2em] uppercase text-fg-4 group-hover:text-fg-3 transition-colors"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 {project.category}
@@ -491,7 +491,7 @@ export const ProjectsSection: React.FC = () => {
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="px-2.5 py-1 text-[9.5px] font-medium tracking-[0.14em] uppercase rounded-sm border border-[#8C6D4F]/30 text-[#C4B5A5] group-hover:border-[#D4AF37]/50 group-hover:text-[#E8D7C5] transition-all duration-300"
+                    className="px-2.5 py-1 text-[9.5px] font-medium tracking-[0.14em] uppercase rounded-sm border border-bronze/30 text-fg-3 group-hover:border-gold/50 group-hover:text-fg-2 transition-all duration-300"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     {t}
@@ -499,7 +499,7 @@ export const ProjectsSection: React.FC = () => {
                 ))}
               </div>
 
-              <span className="sm:col-span-1 hidden sm:block text-right text-xs text-[#8C6D4F] group-hover:text-[#D4AF37] group-hover:translate-x-1 transition-all duration-300">
+              <span className="sm:col-span-1 hidden sm:block text-right text-xs text-bronze group-hover:text-gold group-hover:translate-x-1 transition-all duration-300">
                 &#8599;
               </span>
             </motion.a>
@@ -518,7 +518,7 @@ export const ProjectsSection: React.FC = () => {
             href="https://github.com/Atish019?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center space-x-3 px-8 py-4 border border-[#8C6D4F]/50 bg-[#100D0B] hover:border-[#D4AF37] hover:bg-[#16120E] text-[#E8DFD8] hover:text-[#F7E7C4] text-[11px] font-medium tracking-[0.25em] uppercase transition-all duration-300"
+            className="group inline-flex items-center space-x-3 px-8 py-4 border border-bronze/50 bg-surface-1 hover:border-gold hover:bg-surface-2 text-fg-2 hover:text-grad-1 text-[11px] font-medium tracking-[0.25em] uppercase transition-all duration-300"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             <span>EXPLORE ALL REPOSITORIES</span>

@@ -44,7 +44,7 @@ export const AboutSection: React.FC = () => {
   // 3. Top-Level Unconditional Transform for Spotlight Background
   const spotlightBg = useTransform(
     [spotlightX, spotlightY],
-    ([x, y]) => `radial-gradient(circle 240px at ${x}px ${y}px, rgba(255,255,255,0.35), rgba(212,175,55,0.18), transparent 80%)`
+    ([x, y]) => `radial-gradient(circle 240px at ${x}px ${y}px, rgba(var(--p-spot-rgb),0.35), rgba(var(--p-glow-rgb),0.18), transparent 80%)`
   );
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -69,18 +69,18 @@ export const AboutSection: React.FC = () => {
   return (
     <section 
       id="about" 
-      className="relative w-screen min-h-screen bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black py-24 lg:py-32 px-6 sm:px-12 lg:px-20 overflow-hidden flex items-center"
+      className="relative w-screen min-h-screen bg-ink text-fg-2 font-sans selection:bg-fg-3 selection:text-ink py-24 lg:py-32 px-6 sm:px-12 lg:px-20 overflow-hidden flex items-center"
     >
       {/* ================= BACKGROUND GLOWS & FLOATING PARTICLES ================= */}
       <motion.div 
         animate={{ scale: [1, 1.2, 1], opacity: [0.08, 0.16, 0.08] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-1/4 left-1/6 w-[32rem] h-[32rem] bg-[#D4AF37] rounded-full blur-[160px] pointer-events-none"
+        className="absolute top-1/4 left-1/6 w-[32rem] h-[32rem] bg-gold rounded-full blur-[160px] pointer-events-none"
       />
       <motion.div 
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.05, 0.12, 0.05] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-1/6 right-1/4 w-[28rem] h-[28rem] bg-[#8C6D4F] rounded-full blur-[170px] pointer-events-none"
+        className="absolute bottom-1/6 right-1/4 w-[28rem] h-[28rem] bg-bronze rounded-full blur-[170px] pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
@@ -94,12 +94,12 @@ export const AboutSection: React.FC = () => {
           className="flex items-center space-x-4 mb-10"
         >
           <span 
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
+            className="text-[11px] font-medium tracking-[0.35em] uppercase text-gold"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             01 / ABOUT ME
           </span>
-          <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
+          <div className="w-20 h-[1px] bg-gradient-to-r from-gold/80 via-bronze/40 to-transparent" />
         </motion.div>
 
         {/* Main Grid: Content + Portrait */}
@@ -119,10 +119,10 @@ export const AboutSection: React.FC = () => {
                 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.4rem] tracking-tight uppercase leading-[0.88]"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
-                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_10px_rgba(0,0,0,0.85)]">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-fg via-fg-3 to-fg-5 drop-shadow-[0_4px_10px_rgba(var(--p-shadow-rgb),0.85)]">
                   I DON'T JUST TRAIN MODELS.
                 </span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.3)]">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-grad-1 via-grad-2 to-grad-3 drop-shadow-[0_8px_25px_rgba(201,158,93,0.3)]">
                   I SHIP INTELLIGENCE.
                 </span>
               </h2>
@@ -131,26 +131,26 @@ export const AboutSection: React.FC = () => {
             {/* Concise Bio Paragraph */}
             <motion.p
               variants={fadeUpVariants}
-              className="text-xs sm:text-sm md:text-[14.5px] font-light text-[#B3A497] leading-[1.85] tracking-wide mb-10 max-w-xl"
+              className="text-xs sm:text-sm md:text-[14.5px] font-light text-fg-3 leading-[1.85] tracking-wide mb-10 max-w-xl"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              I'm <span className="text-[#F3DBB3] font-medium">Atish Kumar Sharma</span>, an AI/ML Engineer specializing in Generative AI, LLMs, RAG pipelines, fine-tuning, and multi-agent AI systems. I build and deploy end-to-end intelligent applications using modern AI frameworks, APIs, and MLOps practices &mdash; spanning AI agents, computer vision, NLP, backend APIs, and production-ready AI systems.
+              I'm <span className="text-gold-lite font-medium">Atish Kumar Sharma</span>, an AI/ML Engineer specializing in Generative AI, LLMs, RAG pipelines, fine-tuning, and multi-agent AI systems. I build and deploy end-to-end intelligent applications using modern AI frameworks, APIs, and MLOps practices &mdash; spanning AI agents, computer vision, NLP, backend APIs, and production-ready AI systems.
             </motion.p>
 
             {/* Concise 4-Item Achievement Metrics Grid */}
             <motion.div 
               variants={fadeUpVariants}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 pb-2 border-t border-[#8C6D4F]/25"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 pb-2 border-t border-bronze/25"
             >
               {/* Stat 1 */}
               <div className="flex flex-col">
                 <span 
-                  className="text-3xl sm:text-4xl font-light text-[#F4EBE2] tracking-tight"
+                  className="text-3xl sm:text-4xl font-light text-fg tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   99.77%
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
+                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-fg-4 mt-0.5">
                   Crop Ranking Accuracy
                 </span>
               </div>
@@ -158,12 +158,12 @@ export const AboutSection: React.FC = () => {
               {/* Stat 2 */}
               <div className="flex flex-col">
                 <span 
-                  className="text-3xl sm:text-4xl font-light text-[#D4AF37] tracking-tight"
+                  className="text-3xl sm:text-4xl font-light text-gold tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   1531
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
+                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-fg-4 mt-0.5">
                   IIT JAM All India Rank
                 </span>
               </div>
@@ -171,12 +171,12 @@ export const AboutSection: React.FC = () => {
               {/* Stat 3 */}
               <div className="flex flex-col">
                 <span 
-                  className="text-3xl sm:text-4xl font-light text-[#F4EBE2] tracking-tight"
+                  className="text-3xl sm:text-4xl font-light text-fg tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   503
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
+                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-fg-4 mt-0.5">
                   Amazon ML Challenge AIR
                 </span>
               </div>
@@ -184,12 +184,12 @@ export const AboutSection: React.FC = () => {
               {/* Stat 4 */}
               <div className="flex flex-col">
                 <span 
-                  className="text-3xl sm:text-4xl font-light text-[#D4AF37] tracking-tight"
+                  className="text-3xl sm:text-4xl font-light text-gold tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   15+
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
+                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-fg-4 mt-0.5">
                   Shipped AI Projects
                 </span>
               </div>
@@ -207,7 +207,7 @@ export const AboutSection: React.FC = () => {
                 rotate: isCardHovered ? 180 : 0
               }}
               transition={{ duration: 3, ease: "easeOut" }}
-              className="absolute -inset-6 bg-[conic-gradient(from_0deg,#D4AF37_0%,#8C6D4F_30%,transparent_60%,#D4AF37_100%)] blur-2xl rounded-3xl pointer-events-none"
+              className="absolute -inset-6 bg-[conic-gradient(from_0deg,var(--p-gold)_0%,var(--p-bronze)_30%,transparent_60%,var(--p-gold)_100%)] blur-2xl rounded-3xl pointer-events-none"
             />
 
             {/* Drifting Gold Spark Embers on Hover */}
@@ -217,13 +217,13 @@ export const AboutSection: React.FC = () => {
                   initial={{ opacity: 0, y: 10, x: -20 }}
                   animate={{ opacity: [0, 1, 0], y: -50, x: -30 }}
                   transition={{ duration: 2, repeat: Infinity, ease: 'easeOut' }}
-                  className="absolute top-1/4 -left-6 w-1.5 h-1.5 bg-[#F3DBB3] rounded-full blur-[1px] shadow-[0_0_8px_#D4AF37] pointer-events-none z-30"
+                  className="absolute top-1/4 -left-6 w-1.5 h-1.5 bg-gold-lite rounded-full blur-[1px] shadow-[0_0_8px_var(--p-gold)] pointer-events-none z-30"
                 />
                 <motion.div
                   initial={{ opacity: 0, y: 20, x: 20 }}
                   animate={{ opacity: [0, 1, 0], y: -60, x: 40 }}
                   transition={{ duration: 2.4, repeat: Infinity, ease: 'easeOut', delay: 0.3 }}
-                  className="absolute bottom-1/3 -right-6 w-2 h-2 bg-[#D4AF37] rounded-full blur-[1px] shadow-[0_0_10px_#D4AF37] pointer-events-none z-30"
+                  className="absolute bottom-1/3 -right-6 w-2 h-2 bg-gold rounded-full blur-[1px] shadow-[0_0_10px_var(--p-gold)] pointer-events-none z-30"
                 />
               </>
             )}
@@ -239,27 +239,27 @@ export const AboutSection: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative p-3.5 border border-[#8C6D4F]/40 rounded-sm bg-[#120F0C]/80 backdrop-blur-xl shadow-[0_25px_70px_rgba(0,0,0,0.95)] cursor-pointer group transition-colors duration-500 hover:border-[#D4AF37]/80"
+              className="relative p-3.5 border border-bronze/40 rounded-sm bg-surface-1/80 backdrop-blur-xl shadow-[0_25px_70px_rgba(var(--p-shadow-rgb),0.95)] cursor-pointer group transition-colors duration-500 hover:border-gold/80"
             >
               {/* Dynamic Laser Border Pulse on Card Perimeter */}
               <div className="absolute inset-0 rounded-sm pointer-events-none overflow-hidden">
                 <motion.div 
                   animate={{ x: isCardHovered ? ['-100%', '200%'] : '-100%' }}
                   transition={{ duration: 1.8, repeat: Infinity, ease: 'linear' }}
-                  className="w-1/2 h-full bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent skew-x-12"
+                  className="w-1/2 h-full bg-gradient-to-r from-transparent via-gold/30 to-transparent skew-x-12"
                 />
               </div>
 
               {/* Locked Corner Gold Accent Brackets */}
               <div className="pointer-events-none">
-                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#D4AF37] transition-transform duration-500 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 shadow-[0_0_10px_rgba(212,175,55,0.4)]" />
-                <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#D4AF37] transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shadow-[0_0_10px_rgba(212,175,55,0.4)]" />
-                <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#D4AF37] transition-transform duration-500 group-hover:-translate-x-0.5 group-hover:translate-y-0.5 shadow-[0_0_10px_rgba(212,175,55,0.4)]" />
-                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#D4AF37] transition-transform duration-500 group-hover:translate-x-0.5 group-hover:translate-y-0.5 shadow-[0_0_10px_rgba(212,175,55,0.4)]" />
+                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-gold transition-transform duration-500 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 shadow-[0_0_10px_rgba(var(--p-glow-rgb),0.4)]" />
+                <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-gold transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shadow-[0_0_10px_rgba(var(--p-glow-rgb),0.4)]" />
+                <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-gold transition-transform duration-500 group-hover:-translate-x-0.5 group-hover:translate-y-0.5 shadow-[0_0_10px_rgba(var(--p-glow-rgb),0.4)]" />
+                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-gold transition-transform duration-500 group-hover:translate-x-0.5 group-hover:translate-y-0.5 shadow-[0_0_10px_rgba(var(--p-glow-rgb),0.4)]" />
               </div>
 
               {/* Portrait Image Canvas */}
-              <div className="relative overflow-hidden w-full max-w-[390px] aspect-[4/5] bg-black rounded-sm">
+              <div className="relative overflow-hidden w-full max-w-[390px] aspect-[4/5] bg-ink rounded-sm">
                 {/* Main Portrait */}
                 <img
                   src={profileImg}
@@ -277,12 +277,12 @@ export const AboutSection: React.FC = () => {
                 />
 
                 {/* Bottom Film Noir Shadow */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent pointer-events-none" />
 
                 {/* Monoline Signature */}
                 <div className="absolute bottom-4 right-4 z-20 select-none">
                   <span 
-                    className="text-3xl text-[#F2D8A7] drop-shadow-[0_0_12px_rgba(242,216,167,0.5)] transition-colors duration-300 group-hover:text-white"
+                    className="text-3xl text-gold-lite drop-shadow-[0_0_12px_rgba(242,216,167,0.5)] transition-colors duration-300 group-hover:text-fg"
                     style={{ fontFamily: "'Herr Von Muellerhoff', cursive" }}
                   >
                     Atish
