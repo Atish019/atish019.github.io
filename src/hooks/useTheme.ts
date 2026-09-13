@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 export type Theme = 'dark' | 'light';
 
@@ -11,8 +11,9 @@ function currentTheme(): Theme {
 
 /**
  * Reads the theme applied by the pre-paint script in index.html and lets the
- * UI flip it. The choice is remembered; until the visitor picks one we follow
- * the operating system preference.
+ * UI flip it. The choice is remembered. New visitors always start dark — the
+ * portfolio is built dark first — so the OS preference is deliberately not
+ * consulted; switching is the visitor's call, not their system's.
  */
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(currentTheme);
@@ -33,23 +34,6 @@ export function useTheme() {
 
   const toggle = useCallback(() => {
     apply(currentTheme() === 'light' ? 'dark' : 'light');
-  }, [apply]);
-
-  // Follow the OS while the visitor has not made an explicit choice.
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: light)');
-    const onChange = (e: MediaQueryListEvent) => {
-      let stored: string | null = null;
-      try {
-        stored = localStorage.getItem(STORAGE_KEY);
-      } catch {
-        /* ignore */
-      }
-      if (stored) return;
-      apply(e.matches ? 'light' : 'dark');
-    };
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
   }, [apply]);
 
   return { theme, toggle };

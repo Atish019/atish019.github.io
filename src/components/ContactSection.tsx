@@ -84,6 +84,13 @@ export const ContactSection: React.FC = () => {
                 >
                   06 / CONTACT
                 </span>
+                <span
+                  className="text-[0.8125rem] text-bronze/90 leading-none -mt-0.5"
+                  style={{ fontFamily: "'Noto Serif Devanagari', serif" }}
+                  lang="hi"
+                >
+                  संपर्क
+                </span>
                 <div className="w-16 h-[1px] bg-gradient-to-r from-gold/80 via-bronze/40 to-transparent" />
               </motion.div>
 

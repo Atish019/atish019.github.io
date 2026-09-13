@@ -95,6 +95,13 @@ export const ResearchSection: React.FC = () => {
           >
             04 / RESEARCH
           </span>
+          <span
+            className="text-[0.8125rem] text-bronze/90 leading-none -mt-0.5"
+            style={{ fontFamily: "'Noto Serif Devanagari', serif" }}
+            lang="hi"
+          >
+            अनुसंधान
+          </span>
           <div className="w-16 h-[1px] bg-gradient-to-r from-gold/80 via-bronze/40 to-transparent" />
         </motion.div>
 

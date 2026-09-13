@@ -26,7 +26,16 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      # Vite inlines VITE_* at build time, so the assistant key has to be present
+      # here or the deployed chat and voice guide fall back to their offline reply.
+      # This does put the key into the public bundle — the only way to keep it
+      # secret is to move the model call behind a proxy and set VITE_CHAT_ENDPOINT.
       - run: npm run build
+        env:
+          VITE_GROQ_API_KEY: ${{ secrets.VITE_GROQ_API_KEY || secrets.GROQ_API_KEY }}
+          # Optional repo variable, to change model without touching code.
+          VITE_CHAT_MODEL: ${{ vars.VITE_CHAT_MODEL }}
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

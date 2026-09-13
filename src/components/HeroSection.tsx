@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeToggle } from './ThemeToggle';
+import { NeuralField } from './NeuralField';
+import { openChat } from '../lib/chatBus';
 import type { Variants } from 'framer-motion';
 import watermarkImg from '../assets/watermark.webp';
 import profileImg from '../assets/Atish-photo.webp';
@@ -124,6 +126,10 @@ export const HeroSection: React.FC = () => {
         {/* Grounding shadow at the bottom */}
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent" />
 
+        {/* WebGL constellation — sits above the ink washes so it reads across
+            the whole stage, and adds light onto the still rather than hiding it. */}
+        <NeuralField />
+
         {/* ================= 3. ANIMATED WATERMARK EMBLEM ================= */}
         <div className="absolute bottom-24 right-6 lg:bottom-28 lg:right-10 pointer-events-none flex items-center justify-center z-10">
           <div className="relative flex items-center justify-center">
@@ -192,8 +198,9 @@ export const HeroSection: React.FC = () => {
           <div className="flex items-center ml-auto">
             <ThemeToggle onHoverChange={setIsHovered} />
 
-            <a
-              href="#contact"
+            <button
+              type="button"
+              onClick={() => openChat()}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               className="group hidden sm:flex items-center space-x-2 text-[0.6875rem] tracking-[0.24em] font-light uppercase py-2 px-4 border border-bronze/50 hover:border-gold text-fg-2 transition-all duration-300 backdrop-blur-sm ml-3"
@@ -203,7 +210,7 @@ export const HeroSection: React.FC = () => {
               <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-xs">
                 ↗
               </span>
-            </a>
+            </button>
 
             {/* Mobile menu toggle */}
             <button
@@ -249,14 +256,17 @@ export const HeroSection: React.FC = () => {
                   {item.name}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setMenuOpen(false)}
-                className="block px-6 py-4 text-[0.6875rem] tracking-[0.28em] font-light uppercase text-grad-1 bg-surface-2 hover:bg-surface-2 transition-colors duration-300"
+              <button
+                type="button"
+                onClick={() => {
+                  setMenuOpen(false);
+                  openChat();
+                }}
+                className="block w-full text-left px-6 py-4 text-[0.6875rem] tracking-[0.28em] font-light uppercase text-grad-1 bg-surface-2 hover:bg-surface-2 transition-colors duration-300"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 LET&apos;S TALK ↗
-              </a>
+              </button>
             </motion.nav>
           )}
         </AnimatePresence>
@@ -271,6 +281,23 @@ export const HeroSection: React.FC = () => {
             animate="visible"
             className="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[37rem] xl:max-w-[40rem] pointer-events-auto z-20"
           >
+            {/* Devanagari eyebrow — the headline's own words, in the language
+                they were first thought in. */}
+            <motion.p
+              variants={fadeUpVariants}
+              lang="hi"
+              className="mb-3 text-sm sm:text-[0.9375rem] text-bronze/90 tracking-[0.06em] select-none"
+              style={{ fontFamily: "'Noto Serif Devanagari', serif" }}
+            >
+              बुद्धिमान तंत्र
+              <span
+                className="ml-2 text-[0.6875rem] tracking-[0.28em] uppercase text-fg-4"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                · intelligent systems
+              </span>
+            </motion.p>
+
             {/* Massive Condensed Headline */}
             <motion.div variants={fadeUpVariants} className="relative mb-3.5 select-none">
               <h1

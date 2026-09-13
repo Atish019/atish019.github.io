@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { askAssistant, isAssistantConfigured, type ChatMessage } from '../lib/assistant';
+import { onOpenChat } from '../lib/chatBus';
+import { assistantErrorMessage } from '../lib/assistant';
 
 const GREETING =
   "Hi — I'm Atish 👋 Well, the AI twin I trained on my own work. Ask me about my projects, my LSTM crop-ranking research, my stack, or whether I'm open to work.";
@@ -68,6 +70,9 @@ export function ChatWidget() {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' });
   }, [bubbles, pending]);
 
+  // "Let's talk" anywhere on the page opens this panel.
+  useEffect(() => onOpenChat(() => setOpen(true)), []);
+
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -93,11 +98,8 @@ export function ChatWidget() {
     try {
       const reply = await askAssistant(question, history);
       push('assistant', reply);
-    } catch {
-      push(
-        'assistant',
-        "I'm having a connection hiccup right now. You can always reach me at atish.sharma6203@gmail.com.",
-      );
+    } catch (err) {
+      push('assistant', assistantErrorMessage(err, 'atish.sharma6203@gmail.com'));
     } finally {
       setPending(false);
       inputRef.current?.focus();

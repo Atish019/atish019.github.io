@@ -12,7 +12,7 @@ export interface ChatMessage {
 const ENDPOINT =
   import.meta.env.VITE_CHAT_ENDPOINT || 'https://api.groq.com/openai/v1/chat/completions';
 const API_KEY = import.meta.env.VITE_GROQ_API_KEY || '';
-const MODEL = import.meta.env.VITE_CHAT_MODEL || 'llama-3.3-70b-versatile';
+const MODEL = import.meta.env.VITE_CHAT_MODEL || 'openai/gpt-oss-120b';
 
 /** A proxy holds its own credentials, so only the direct call needs a key. */
 export const isAssistantConfigured = Boolean(API_KEY) || Boolean(import.meta.env.VITE_CHAT_ENDPOINT);
@@ -72,6 +72,43 @@ function systemPrompt(context: string): string {
   ].join('\n');
 }
 
+/** Why a request failed, so each surface can say something actually useful. */
+export type AssistantFailure = 'auth' | 'rate-limit' | 'model' | 'server' | 'network';
+
+export class AssistantError extends Error {
+  readonly kind: AssistantFailure;
+  constructor(kind: AssistantFailure, message: string) {
+    super(message);
+    this.name = 'AssistantError';
+    this.kind = kind;
+  }
+}
+
+/** Turns an HTTP status into the failure the visitor should hear about. */
+function failureFor(status: number): AssistantFailure {
+  if (status === 401 || status === 403) return 'auth';
+  if (status === 429) return 'rate-limit';
+  if (status === 404 || status === 400) return 'model';
+  return 'server';
+}
+
+/** A short, honest line for each failure — no blaming the network for a bad key. */
+export function assistantErrorMessage(err: unknown, email: string): string {
+  const kind = err instanceof AssistantError ? err.kind : 'network';
+  switch (kind) {
+    case 'auth':
+      return `My assistant key has expired, so I cannot answer here right now. Mail me at ${email} and I will reply myself.`;
+    case 'rate-limit':
+      return 'That is a lot of questions at once — give me a few seconds and ask again.';
+    case 'model':
+      return `My assistant is misconfigured at the moment. Mail me at ${email} and I will reply myself.`;
+    case 'server':
+      return 'My assistant is having a moment on its side. Try again shortly.';
+    default:
+      return `I could not reach my assistant just now. You can always reach me at ${email}.`;
+  }
+}
+
 export async function askAssistant(
   question: string,
   history: ChatMessage[],
@@ -89,7 +126,10 @@ export async function askAssistant(
     body: JSON.stringify({
       model: MODEL,
       temperature: 0.6,
-      max_tokens: 400,
+      // Reasoning models bill their private thinking against this budget, so it
+      // is roomier than the visible answer needs, and the thinking is kept short.
+      max_tokens: 900,
+      reasoning_effort: 'low',
       messages: [
         { role: 'system', content: systemPrompt(context) },
         ...history.slice(-8),
@@ -98,10 +138,14 @@ export async function askAssistant(
     }),
   });
 
-  if (!response.ok) throw new Error(`Chat request failed: ${response.status}`);
+  if (!response.ok) {
+    throw new AssistantError(failureFor(response.status), `Chat request failed: ${response.status}`);
+  }
 
   const data = await response.json();
+  // Reasoning models put their private thinking in a separate field; only the
+  // answer belongs to the visitor, and an empty one means the turn failed.
   const reply: string | undefined = data?.choices?.[0]?.message?.content;
-  if (!reply) throw new Error('Chat request returned no message');
+  if (!reply?.trim()) throw new AssistantError('server', 'Chat request returned no message');
   return reply.trim();
 }

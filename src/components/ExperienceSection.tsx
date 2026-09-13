@@ -88,6 +88,13 @@ export const ExperienceSection: React.FC = () => {
           >
             05 / JOURNEY
           </span>
+          <span
+            className="text-[0.8125rem] text-bronze/90 leading-none -mt-0.5"
+            style={{ fontFamily: "'Noto Serif Devanagari', serif" }}
+            lang="hi"
+          >
+            यात्रा
+          </span>
           <div className="w-20 h-[1px] bg-gradient-to-r from-gold/80 via-bronze/40 to-transparent" />
         </motion.div>
 

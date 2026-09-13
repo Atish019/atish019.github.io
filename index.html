@@ -41,11 +41,12 @@
     />
     <meta name="twitter:image" content="https://atish019.github.io/og-image.jpg" />
 
-    <!-- Fonts: Bebas Neue (headings), Montserrat (body), Herr Von Muellerhoff (signature) -->
+    <!-- Fonts: Bebas Neue (headings), Montserrat (body), Herr Von Muellerhoff (signature),
+         Noto Serif Devanagari (the Hindi sub-labels) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Herr+Von+Muellerhoff&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Herr+Von+Muellerhoff&family=Montserrat:wght@200;300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
@@ -88,17 +89,20 @@
         ]
       }
     </script>
-    <!-- Apply the saved (or system) theme before first paint, so there is no flash. -->
+    <!-- Apply the saved theme before first paint, so there is no flash. The
+         portfolio is designed dark first, so that is the default for every new
+         visitor regardless of their OS setting; the toggle is remembered after. -->
     <script>
       (function () {
+        var theme = 'dark';
         try {
           var stored = localStorage.getItem('aks-theme');
-          var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-          document.documentElement.setAttribute('data-theme', theme);
-          document.documentElement.style.colorScheme = theme;
+          if (stored === 'light' || stored === 'dark') theme = stored;
         } catch (e) {
-          document.documentElement.setAttribute('data-theme', 'dark');
+          /* private mode — dark it is */
         }
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.colorScheme = theme;
       })();
     </script>
   </head>
