@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeToggle } from './ThemeToggle';
 import type { Variants } from 'framer-motion';
 import watermarkImg from '../assets/watermark.webp';
-import profileImg from '../assets/profile.webp';
+import profileImg from '../assets/Atish-photo.webp';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -29,6 +29,14 @@ const fadeUpVariants: Variants = {
   },
 };
 
+// Soft-edge mask for the hero portrait: fades the left edge into the headline
+// side and the top/bottom into the stage. The two gradients are intersected so
+// every edge feathers at once.
+const PORTRAIT_MASK = [
+  'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.25) 14%, rgba(0,0,0,0.85) 34%, #000 52%, #000 88%, transparent 100%)',
+  'linear-gradient(to bottom, transparent 0%, #000 14%, #000 82%, transparent 99%)',
+].join(', ');
+
 const navItems = [
   { name: 'ABOUT', href: '#about' },
   { name: 'PROJECTS', href: '#work' },
@@ -52,7 +60,7 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-screen h-screen overflow-hidden bg-ink text-fg-2 font-sans selection:bg-fg-3 selection:text-ink cursor-none">
+    <section id="home" className="relative w-screen h-screen overflow-hidden bg-ink text-fg-2 font-sans selection:bg-fg-3 selection:text-ink cursor-none">
       {/* ================= 1. MINIMAL CUSTOM CURSOR ================= */}
       {cursorPos.x >= 0 && (
         <motion.div
@@ -74,7 +82,7 @@ export const HeroSection: React.FC = () => {
         <motion.div
           animate={{ opacity: [0.22, 0.4, 0.22], scale: [1, 1.06, 1] }}
           transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-0 right-[10%] w-[38rem] h-[38rem] rounded-full bg-grad-2/25 blur-[150px]"
+          className="absolute bottom-0 right-[10%] w-[38rem] h-[38rem] rounded-full bg-grad-2/25 blur-[9.375rem]"
         />
 
         {/* The portrait: slow cinematic float + breathing scale */}
@@ -92,26 +100,37 @@ export const HeroSection: React.FC = () => {
             scale: { duration: 12, repeat: Infinity, ease: 'easeInOut' },
             y: { duration: 8, repeat: Infinity, ease: 'easeInOut' },
           }}
-          className="relative h-[92vh] md:h-[96vh] w-auto max-w-none object-contain object-bottom origin-bottom mr-[2vw] md:mr-[6vw] lg:mr-[9vw] drop-shadow-[0_0_60px_rgba(var(--p-shadow-rgb),0.9)]"
+          className="relative h-[92vh] md:h-[96vh] w-auto max-w-none object-contain object-bottom origin-bottom mr-[2vw] md:mr-[6vw] lg:mr-[9vw] opacity-35 md:opacity-100 drop-shadow-[0_0_60px_rgba(var(--p-shadow-rgb),0.9)]"
+          style={{
+            // Feather the photo's hard edges so the framed shot melts into the
+            // stage instead of reading as a pasted-in rectangle.
+            maskImage: PORTRAIT_MASK,
+            WebkitMaskImage: PORTRAIT_MASK,
+            maskComposite: 'intersect',
+            WebkitMaskComposite: 'source-in',
+          }}
         />
 
         {/* Slow gold light sweep across the subject */}
         <motion.div
           animate={{ x: ['-40%', '140%'] }}
           transition={{ duration: 9, repeat: Infinity, repeatDelay: 4, ease: 'easeInOut' }}
-          className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-r from-transparent via-gold/[0.07] to-transparent skew-x-12 mix-blend-screen"
+          className="glint absolute inset-y-0 right-0 w-1/3 bg-gradient-to-r from-transparent via-gold/[0.07] to-transparent skew-x-12 mix-blend-screen"
         />
 
         {/* Seamless soft left edge blend so the headline stays readable */}
-        <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-ink via-ink/90 to-transparent" />
+        <div className="absolute inset-y-0 left-0 w-full md:w-2/3 bg-gradient-to-r from-ink via-ink/90 to-transparent" />
 
         {/* Grounding shadow at the bottom */}
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent" />
 
         {/* ================= 3. ANIMATED WATERMARK EMBLEM ================= */}
-        <div className="absolute bottom-6 right-6 lg:bottom-10 lg:right-12 pointer-events-none flex items-center justify-center z-10">
+        <div className="absolute bottom-24 right-6 lg:bottom-28 lg:right-10 pointer-events-none flex items-center justify-center z-10">
           <div className="relative flex items-center justify-center">
-            <div className="absolute w-36 h-36 bg-ink/85 rounded-full blur-xl" />
+            <div
+              className="absolute w-36 h-36 rounded-full blur-xl"
+              style={{ backgroundColor: 'var(--p-halo)' }}
+            />
 
             <motion.div
               animate={{
@@ -152,7 +171,7 @@ export const HeroSection: React.FC = () => {
 
           {/* Navigation Links */}
           <nav
-            className="hidden lg:flex items-center space-x-6 xl:space-x-9 text-[10.5px] xl:text-[11px] tracking-[0.22em] xl:tracking-[0.26em] font-light uppercase text-fg-3 absolute left-1/2 -translate-x-1/2 whitespace-nowrap"
+            className="hidden lg:flex items-center space-x-6 xl:space-x-9 text-[0.65625rem] xl:text-[0.6875rem] tracking-[0.22em] xl:tracking-[0.26em] font-light uppercase text-fg-3 absolute left-1/2 -translate-x-1/2 whitespace-nowrap"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             {navItems.map((item) => (
@@ -177,7 +196,7 @@ export const HeroSection: React.FC = () => {
               href="#contact"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              className="group hidden sm:flex items-center space-x-2 text-[11px] tracking-[0.24em] font-light uppercase py-2 px-4 border border-bronze/50 hover:border-gold text-fg-2 transition-all duration-300 backdrop-blur-sm ml-3"
+              className="group hidden sm:flex items-center space-x-2 text-[0.6875rem] tracking-[0.24em] font-light uppercase py-2 px-4 border border-bronze/50 hover:border-gold text-fg-2 transition-all duration-300 backdrop-blur-sm ml-3"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <span>LET&apos;S TALK</span>
@@ -224,7 +243,7 @@ export const HeroSection: React.FC = () => {
                   key={item.name}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-6 py-4 text-[11px] tracking-[0.28em] font-light uppercase text-fg-3 border-b border-bronze/15 last:border-b-0 hover:bg-surface-1 hover:text-grad-1 transition-colors duration-300"
+                  className="block px-6 py-4 text-[0.6875rem] tracking-[0.28em] font-light uppercase text-fg-3 border-b border-bronze/15 last:border-b-0 hover:bg-surface-1 hover:text-grad-1 transition-colors duration-300"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   {item.name}
@@ -233,7 +252,7 @@ export const HeroSection: React.FC = () => {
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
-                className="block px-6 py-4 text-[11px] tracking-[0.28em] font-light uppercase text-grad-1 bg-surface-2 hover:bg-surface-2 transition-colors duration-300"
+                className="block px-6 py-4 text-[0.6875rem] tracking-[0.28em] font-light uppercase text-grad-1 bg-surface-2 hover:bg-surface-2 transition-colors duration-300"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 LET&apos;S TALK ↗
@@ -275,7 +294,7 @@ export const HeroSection: React.FC = () => {
             {/* Subtitle Technologies */}
             <motion.div variants={fadeUpVariants} className="mb-4">
               <p
-                className="text-[10px] sm:text-[11px] md:text-xs font-normal tracking-[0.28em] uppercase text-fg-3"
+                className="text-[0.625rem] sm:text-[0.6875rem] md:text-xs font-normal tracking-[0.28em] uppercase text-fg-3"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 AI/ML ENGINEER <span className="text-bronze mx-1">•</span> GENERATIVE AI <span className="text-bronze mx-1">•</span> AI AGENTS
@@ -285,7 +304,7 @@ export const HeroSection: React.FC = () => {
             {/* Description */}
             <motion.div
               variants={fadeUpVariants}
-              className="text-xs sm:text-sm md:text-[13.5px] font-light text-fg-4 leading-[1.8] tracking-wide max-w-lg mb-6 space-y-1"
+              className="text-xs sm:text-sm md:text-[0.84375rem] font-light text-fg-4 leading-[1.8] tracking-wide max-w-lg mb-6 space-y-1"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <p>
@@ -306,7 +325,7 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center space-x-3 px-6 sm:px-7 py-3.5 border border-bronze bg-surface-1/80 hover:border-gold text-fg-2 hover:text-fg text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(var(--p-glow-rgb),0.18)]"
+                className="relative inline-flex items-center space-x-3 px-6 sm:px-7 py-3.5 border border-bronze bg-surface-1/80 hover:border-gold text-fg-2 hover:text-fg text-[0.6875rem] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(var(--p-glow-rgb),0.18)]"
               >
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-fg-2/40 to-transparent pointer-events-none" />
                 <span>EXPLORE MY WORK</span>
@@ -322,7 +341,7 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center space-x-2 px-6 sm:px-7 py-3.5 border border-bronze/40 hover:border-bronze text-fg-3 hover:text-fg-2 text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300"
+                className="relative inline-flex items-center space-x-2 px-6 sm:px-7 py-3.5 border border-bronze/40 hover:border-bronze text-fg-3 hover:text-fg-2 text-[0.6875rem] font-medium tracking-[0.24em] uppercase transition-all duration-300"
               >
                 <span>GITHUB</span>
                 <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 text-xs">
@@ -332,41 +351,42 @@ export const HeroSection: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* RIGHT: Floating Quote & Signature Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:flex flex-col items-start pointer-events-auto pr-24 xl:pr-36 mr-4 z-20 select-none"
-          >
-            <span className="text-xl text-grad-2 leading-none font-serif mb-2">
-              &ldquo;
-            </span>
-
-            <div
-              className="text-[9.5px] font-medium tracking-[0.24em] uppercase text-fg-2 space-y-1 mb-3"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            >
-              <p>MODELS ARE MY CRAFT.</p>
-              <p>IMPACT IS MY METRIC.</p>
-            </div>
-
-            <div className="w-28 h-[1px] bg-gradient-to-r from-gold via-fg-2/70 to-transparent shadow-[0_0_8px_rgba(var(--p-glow-rgb),0.4)] mb-2" />
-
-            <div
-              className="text-[2.2rem] text-gold-soft font-normal leading-none -ml-0.5"
-              style={{
-                fontFamily: "'Herr Von Muellerhoff', 'Allura', cursive",
-                letterSpacing: '0.04em',
-              }}
-            >
-              Atish
-            </div>
-          </motion.div>
         </div>
 
-        {/* Bottom Spacer */}
-        <div className="h-2" />
+        {/* ================= 5. QUOTE & SIGNATURE STRIP =================
+            Anchored bottom-left rather than floating on the right: the hero
+            portrait is now a full-bleed still, so a card on that side always
+            landed on top of the subject. */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="hidden lg:[@media(min-height:760px)]:flex absolute bottom-8 left-6 sm:left-12 lg:left-16 items-center gap-5 pointer-events-auto z-20 select-none"
+        >
+          <span className="text-2xl text-grad-2 leading-none font-serif -mt-2">
+            &ldquo;
+          </span>
+
+          <div
+            className="text-[0.59375rem] font-medium tracking-[0.24em] uppercase text-fg-2 space-y-1"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            <p>MODELS ARE MY CRAFT.</p>
+            <p>IMPACT IS MY METRIC.</p>
+          </div>
+
+          <div className="w-20 h-[1px] bg-gradient-to-r from-gold via-fg-2/70 to-transparent shadow-[0_0_8px_rgba(var(--p-glow-rgb),0.4)]" />
+
+          <div
+            className="text-[2.2rem] text-gold-soft font-normal leading-none"
+            style={{
+              fontFamily: "'Herr Von Muellerhoff', 'Allura', cursive",
+              letterSpacing: '0.04em',
+            }}
+          >
+            Atish
+          </div>
+        </motion.div>
       </div>
     </section>
   );

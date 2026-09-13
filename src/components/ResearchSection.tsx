@@ -77,7 +77,7 @@ export const ResearchSection: React.FC = () => {
       className="relative w-full bg-ink text-fg-2 font-sans py-28 sm:py-32 px-6 sm:px-12 lg:px-20 overflow-hidden"
     >
       {/* Ambient gold bloom */}
-      <div className="absolute top-1/4 -left-40 w-[34rem] h-[34rem] rounded-full bg-bronze/10 blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 -left-40 w-[34rem] h-[34rem] rounded-full bg-bronze/10 blur-[10rem] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
 
@@ -90,7 +90,7 @@ export const ResearchSection: React.FC = () => {
           className="flex items-center space-x-4 mb-5"
         >
           <span
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-gold"
+            className="text-[0.6875rem] font-medium tracking-[0.35em] uppercase text-gold"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             04 / RESEARCH
@@ -124,7 +124,7 @@ export const ResearchSection: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-xs sm:text-[13px] font-light text-fg-4 leading-relaxed max-w-2xl mb-16"
+          className="text-xs sm:text-[0.8125rem] font-light text-fg-4 leading-relaxed max-w-2xl mb-16"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
           Work that goes past the demo — formal research and a graduate thesis where the
@@ -152,25 +152,25 @@ export const ResearchSection: React.FC = () => {
               {/* Kind + status */}
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <span
-                  className="px-3 py-1.5 text-[9.5px] font-medium tracking-[0.22em] uppercase rounded-sm border border-gold/50 bg-surface-2 text-grad-1"
+                  className="px-3 py-1.5 text-[0.59375rem] font-medium tracking-[0.22em] uppercase rounded-sm border border-gold/50 bg-surface-2 text-grad-1"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   {paper.kind}
                 </span>
-                <span className="text-[9.5px] font-mono tracking-[0.2em] uppercase text-bronze">
+                <span className="text-[0.59375rem] font-mono tracking-[0.2em] uppercase text-bronze">
                   {paper.status}
                 </span>
               </div>
 
               <h3
-                className="text-3xl sm:text-4xl lg:text-[42px] font-normal tracking-wide text-fg uppercase leading-[0.95] mb-5 group-hover:text-grad-1 transition-colors"
+                className="text-3xl sm:text-4xl lg:text-[2.625rem] font-normal tracking-wide text-fg uppercase leading-[0.95] mb-5 group-hover:text-grad-1 transition-colors"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 {paper.title}
               </h3>
 
               <p
-                className="text-xs sm:text-[13px] font-light text-fg-4 leading-[1.8] mb-6 group-hover:text-fg-3 transition-colors"
+                className="text-xs sm:text-[0.8125rem] font-light text-fg-4 leading-[1.8] mb-6 group-hover:text-fg-3 transition-colors"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 {paper.summary}
@@ -178,11 +178,11 @@ export const ResearchSection: React.FC = () => {
 
               {/* Contribution */}
               <div className="mb-7 pl-4 border-l border-gold/40">
-                <span className="block text-[9.5px] font-mono tracking-[0.22em] uppercase text-bronze mb-2">
+                <span className="block text-[0.59375rem] font-mono tracking-[0.22em] uppercase text-bronze mb-2">
                   // CONTRIBUTION
                 </span>
                 <p
-                  className="text-xs sm:text-[12.5px] font-light text-fg-3 leading-[1.8]"
+                  className="text-xs sm:text-[0.78125rem] font-light text-fg-3 leading-[1.8]"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   {paper.contribution}
@@ -192,7 +192,7 @@ export const ResearchSection: React.FC = () => {
               {/* Supervisor */}
               {paper.supervisor && (
                 <div className="mb-7">
-                  <span className="block text-[9.5px] font-mono tracking-[0.22em] uppercase text-bronze mb-1.5">
+                  <span className="block text-[0.59375rem] font-mono tracking-[0.22em] uppercase text-bronze mb-1.5">
                     // SUPERVISOR
                   </span>
                   <span
@@ -208,7 +208,7 @@ export const ResearchSection: React.FC = () => {
               <div className="grid grid-cols-2 gap-x-6 gap-y-5 py-6 border-y border-bronze/20 mb-7">
                 {paper.facts.map((f) => (
                   <div key={f.label} className="flex flex-col">
-                    <span className="text-[9px] font-mono tracking-[0.22em] uppercase text-bronze mb-1.5">
+                    <span className="text-[0.5625rem] font-mono tracking-[0.22em] uppercase text-bronze mb-1.5">
                       {f.label}
                     </span>
                     <span
@@ -226,7 +226,7 @@ export const ResearchSection: React.FC = () => {
                 {paper.stack.map((t) => (
                   <span
                     key={t}
-                    className="px-3 py-1 text-[10px] font-medium tracking-[0.16em] uppercase rounded-sm border border-bronze/35 bg-surface-2 text-fg-2 group-hover:border-gold/50 transition-all duration-300"
+                    className="px-3 py-1 text-[0.625rem] font-medium tracking-[0.16em] uppercase rounded-sm border border-bronze/35 bg-surface-2 text-fg-2 group-hover:border-gold/50 transition-all duration-300"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     {t}
@@ -246,7 +246,7 @@ export const ResearchSection: React.FC = () => {
           className="flex items-center space-x-4 mt-24 mb-10"
         >
           <span
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-gold"
+            className="text-[0.6875rem] font-medium tracking-[0.35em] uppercase text-gold"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             CREDENTIALS
@@ -265,7 +265,7 @@ export const ResearchSection: React.FC = () => {
               className="group relative p-6 rounded-sm border border-bronze/30 bg-surface/70 hover:border-gold/60 transition-all duration-400"
             >
               <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-gold/40 group-hover:border-gold transition-colors" />
-              <span className="block text-[9px] font-mono tracking-[0.22em] uppercase text-bronze mb-2.5">
+              <span className="block text-[0.5625rem] font-mono tracking-[0.22em] uppercase text-bronze mb-2.5">
                 {c.issuer}
               </span>
               <h4
@@ -289,7 +289,7 @@ export const ResearchSection: React.FC = () => {
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div>
-              <span className="block text-[9.5px] font-mono tracking-[0.22em] uppercase text-bronze mb-2">
+              <span className="block text-[0.59375rem] font-mono tracking-[0.22em] uppercase text-bronze mb-2">
                 // BUILT FROM SCRATCH
               </span>
               <h4
@@ -311,7 +311,7 @@ export const ResearchSection: React.FC = () => {
               {fromScratch.map((f) => (
                 <span
                   key={f}
-                  className="px-4 py-2 text-[10px] font-medium tracking-[0.18em] uppercase rounded-sm border border-bronze/40 bg-surface-2 text-fg-2 hover:border-gold hover:text-grad-1 transition-all duration-300"
+                  className="px-4 py-2 text-[0.625rem] font-medium tracking-[0.18em] uppercase rounded-sm border border-bronze/40 bg-surface-2 text-fg-2 hover:border-gold hover:text-grad-1 transition-all duration-300"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   {f}

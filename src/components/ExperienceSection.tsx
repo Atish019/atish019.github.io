@@ -70,7 +70,7 @@ export const ExperienceSection: React.FC = () => {
       className="relative w-full bg-ink text-fg-2 font-sans selection:bg-fg-3 selection:text-ink pt-4 pb-24 px-6 sm:px-12 lg:px-20 overflow-hidden"
     >
       {/* Subtle Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-gold/[0.03] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-gold/[0.03] rounded-full blur-[9.375rem] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto w-full relative z-10">
 
@@ -83,7 +83,7 @@ export const ExperienceSection: React.FC = () => {
           className="flex items-center space-x-4 mb-7"
         >
           <span
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-gold"
+            className="text-[0.6875rem] font-medium tracking-[0.35em] uppercase text-gold"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             05 / JOURNEY
@@ -116,12 +116,12 @@ export const ExperienceSection: React.FC = () => {
         <div className="relative w-full">
 
           {/* Background Track */}
-          <div className="absolute left-[19px] md:left-[140px] top-4 bottom-8 w-[1px] bg-bronze/20" />
+          <div className="absolute left-[1.1875rem] md:left-[8.75rem] top-4 bottom-8 w-[1px] bg-bronze/20" />
 
           {/* Animated Gold Track */}
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute left-[19px] md:left-[140px] top-4 w-[2px] bg-gradient-to-b from-gold via-grad-2 to-bronze/10 shadow-[0_0_10px_var(--p-gold)] origin-top"
+            className="absolute left-[1.1875rem] md:left-[8.75rem] top-4 w-[2px] bg-gradient-to-b from-gold via-grad-2 to-bronze/10 shadow-[0_0_10px_var(--p-gold)] origin-top"
           />
 
           <div className="space-y-12">
@@ -135,14 +135,14 @@ export const ExperienceSection: React.FC = () => {
                 className="relative flex flex-col md:flex-row items-start group"
               >
                 {/* Desktop Year (Left side of track) */}
-                <div className="hidden md:block w-[140px] shrink-0 pr-8 pt-0.5 text-right">
-                  <span className="text-[10px] font-mono tracking-[0.2em] text-bronze group-hover:text-gold transition-colors">
+                <div className="hidden md:block w-[8.75rem] shrink-0 pr-8 pt-0.5 text-right">
+                  <span className="text-[0.625rem] font-mono tracking-[0.2em] text-bronze group-hover:text-gold transition-colors">
                     {stop.year}
                   </span>
                 </div>
 
                 {/* Route Node */}
-                <div className="absolute left-[19px] md:left-[140px] top-1.5 -translate-x-1/2 flex items-center justify-center">
+                <div className="absolute left-[1.1875rem] md:left-[8.75rem] top-1.5 -translate-x-1/2 flex items-center justify-center">
                   <div className="absolute w-6 h-6 rounded-full border border-gold/0 group-hover:border-gold/40 group-hover:scale-150 transition-all duration-700 ease-out" />
                   <div className="w-2.5 h-2.5 rounded-full bg-surface-1 border border-bronze group-hover:bg-gold group-hover:border-gold group-hover:shadow-[0_0_12px_var(--p-gold)] transition-colors duration-300" />
                 </div>
@@ -151,7 +151,7 @@ export const ExperienceSection: React.FC = () => {
                 <div className="ml-14 md:ml-12 pl-2">
                   {/* Mobile Year */}
                   <div className="md:hidden mb-1.5">
-                    <span className="text-[10px] font-mono tracking-[0.2em] text-gold">
+                    <span className="text-[0.625rem] font-mono tracking-[0.2em] text-gold">
                       {stop.year}
                     </span>
                   </div>
@@ -164,14 +164,14 @@ export const ExperienceSection: React.FC = () => {
                   </h3>
 
                   <span
-                    className="block text-[10px] font-medium tracking-[0.2em] uppercase text-bronze mb-2"
+                    className="block text-[0.625rem] font-medium tracking-[0.2em] uppercase text-bronze mb-2"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     {stop.organization}
                   </span>
 
                   <p
-                    className="text-xs sm:text-[13px] font-light text-fg-4 leading-[1.7] max-w-lg group-hover:text-fg-3 transition-colors"
+                    className="text-xs sm:text-[0.8125rem] font-light text-fg-4 leading-[1.7] max-w-lg group-hover:text-fg-3 transition-colors"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     {stop.description}

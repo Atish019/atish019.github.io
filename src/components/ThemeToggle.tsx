@@ -90,7 +90,7 @@ export function FloatingThemeToggle() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 10 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-6 right-6 z-50"
+          className="fixed bottom-6 left-6 z-50"
         >
           <ThemeToggle className="bg-surface-1/85 backdrop-blur-md shadow-[0_8px_28px_rgba(var(--p-shadow-rgb),0.55)]" />
         </motion.div>

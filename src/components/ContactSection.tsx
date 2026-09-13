@@ -79,7 +79,7 @@ export const ContactSection: React.FC = () => {
                 className="flex items-center space-x-4 mb-5"
               >
                 <span
-                  className="text-[11px] font-medium tracking-[0.35em] uppercase text-gold"
+                  className="text-[0.6875rem] font-medium tracking-[0.35em] uppercase text-gold"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   06 / CONTACT
@@ -109,7 +109,7 @@ export const ContactSection: React.FC = () => {
               </motion.div>
 
               <p
-                className="text-xs sm:text-[13px] font-light text-fg-4 leading-relaxed max-w-md mb-10"
+                className="text-xs sm:text-[0.8125rem] font-light text-fg-4 leading-relaxed max-w-md mb-10"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 Have an AI system to design, a research idea worth prototyping, or an
@@ -118,7 +118,7 @@ export const ContactSection: React.FC = () => {
 
               {/* Direct channels */}
               <div className="space-y-3 mb-10">
-                <span className="block text-[9.5px] font-mono tracking-[0.2em] uppercase text-bronze">
+                <span className="block text-[0.59375rem] font-mono tracking-[0.2em] uppercase text-bronze">
                   // DIRECT
                 </span>
                 <a
@@ -130,7 +130,7 @@ export const ContactSection: React.FC = () => {
                 </a>
 
                 <div className="pt-4">
-                  <span className="block text-[9.5px] font-mono tracking-[0.2em] uppercase text-bronze mb-2">
+                  <span className="block text-[0.59375rem] font-mono tracking-[0.2em] uppercase text-bronze mb-2">
                     // BASED IN
                   </span>
                   <span
@@ -150,11 +150,11 @@ export const ContactSection: React.FC = () => {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center space-x-2 px-4 py-2.5 text-[10px] font-medium tracking-[0.2em] uppercase rounded-sm border border-bronze/40 bg-surface-1 text-fg-3 hover:border-gold hover:text-grad-1 transition-all duration-300"
+                    className="group inline-flex items-center space-x-2 px-4 py-2.5 text-[0.625rem] font-medium tracking-[0.2em] uppercase rounded-sm border border-bronze/40 bg-surface-1 text-fg-3 hover:border-gold hover:text-grad-1 transition-all duration-300"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     <span>{s.label}</span>
-                    <span className="text-[9px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                    <span className="text-[0.5625rem] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                       ↗
                     </span>
                   </a>
@@ -203,7 +203,7 @@ export const ContactSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <span className="block text-[9.5px] font-mono tracking-[0.2em] uppercase text-bronze mb-2">
+                    <span className="block text-[0.59375rem] font-mono tracking-[0.2em] uppercase text-bronze mb-2">
                       // SENDER
                     </span>
                     <input
@@ -218,7 +218,7 @@ export const ContactSection: React.FC = () => {
                   </div>
 
                   <div>
-                    <span className="block text-[9.5px] font-mono tracking-[0.2em] uppercase text-bronze mb-2">
+                    <span className="block text-[0.59375rem] font-mono tracking-[0.2em] uppercase text-bronze mb-2">
                       // CHANNEL
                     </span>
                     <input
@@ -234,7 +234,7 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 <div>
-                  <span className="block text-[9.5px] font-mono tracking-[0.2em] uppercase text-bronze mb-2">
+                  <span className="block text-[0.59375rem] font-mono tracking-[0.2em] uppercase text-bronze mb-2">
                     // PAYLOAD
                   </span>
                   <textarea
@@ -250,7 +250,7 @@ export const ContactSection: React.FC = () => {
 
                 {status === 'error' && (
                   <p
-                    className="text-[11px] text-rust"
+                    className="text-[0.6875rem] text-rust"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     Dispatch failed. Mail me directly at{' '}
@@ -278,10 +278,10 @@ export const ContactSection: React.FC = () => {
 
         {/* System Footer Line */}
         <div className="pt-16 mt-16 border-t border-bronze/15 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-4">
-          <span className="text-[10px] font-mono tracking-widest text-bronze uppercase">
+          <span className="text-[0.625rem] font-mono tracking-widest text-bronze uppercase">
             ATISH KUMAR SHARMA // AI &amp; ML ENGINEER
           </span>
-          <span className="text-[10px] font-mono text-bronze">
+          <span className="text-[0.625rem] font-mono text-bronze">
             © {new Date().getFullYear()} • BUILT &amp; DEPLOYED BY ATISH
           </span>
         </div>

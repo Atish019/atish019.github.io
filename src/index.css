@@ -24,7 +24,7 @@
   --p-gold:       #D4AF37;
   --p-gold-lite:  #F3DBB3;
   --p-gold-soft:  #DFBE8A;
-  --p-bronze:     #8C6D4F;
+  --p-bronze:     #9A7A5C;
   --p-bronze-deep:#9B7640;
   --p-rust:       #E0876F;
 
@@ -37,6 +37,9 @@
   --p-glow-rgb:   212, 175, 55;
   --p-spot-rgb:   255, 255, 255;
   --p-cursor:     rgba(235, 215, 195, 0.95);
+  --p-frame:      #000000;
+  --p-stage:      #000000;
+  --p-halo:       rgba(0, 0, 0, 0.85);
   color-scheme: dark;
 }
 
@@ -56,10 +59,10 @@
   --p-fg-4:       #6A5946;
   --p-fg-5:       #96836C;
 
-  --p-gold:       #8F6F16;
+  --p-gold:       #7E6111;
   --p-gold-lite:  #5A4416;
   --p-gold-soft:  #A9873A;
-  --p-bronze:     #8A6A47;
+  --p-bronze:     #77593A;
   --p-bronze-deep:#7A5C1E;
   --p-rust:       #B4543A;
 
@@ -72,6 +75,9 @@
   --p-glow-rgb:   143, 111, 22;
   --p-spot-rgb:   90, 68, 22;
   --p-cursor:     rgba(58, 44, 20, 0.9);
+  --p-frame:      #0B0906;
+  --p-stage:      #0B0906;
+  --p-halo:       rgba(201, 158, 93, 0.22);
   color-scheme: light;
 }
 
@@ -80,6 +86,8 @@
 @theme inline {
   --color-ink:         var(--p-ink);
   --color-ink-deep:    var(--p-ink-deep);
+  --color-frame:       var(--p-frame);
+  --color-stage:       var(--p-stage);
   --color-surface:     var(--p-surface);
   --color-surface-1:   var(--p-surface-1);
   --color-surface-2:   var(--p-surface-2);
@@ -104,11 +112,43 @@
   --color-grad-4:      var(--p-grad-4);
 }
 
+/* Text and rules that sit on top of a dark photograph. The portrait has a
+   black studio backdrop baked in, so this content stays light-on-dark no
+   matter which theme the page is showing. */
+[data-on-stage] {
+  --p-fg:        #FFFFFF;
+  --p-fg-2:      #E8DFD8;
+  --p-fg-3:      #D5CBC0;
+  --p-fg-4:      #A8988B;
+  --p-gold:      #D4AF37;
+  --p-gold-lite: #F3DBB3;
+  --p-gold-soft: #DFBE8A;
+  --p-grad-2:    #C99E5D;
+  --p-glow-rgb:  212, 175, 55;
+}
+
+/* A screen-blended sweep only reads as light on a dark ground; over cream it
+   just leaves a visible band, so the light theme drops it. */
+:root[data-theme="light"] .glint {
+  display: none;
+}
+
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   background-color: var(--p-ink);
+}
+
+/* Every size in this design is expressed in rem, so growing the root font size
+   scales the whole layout together on large displays. Without this the page
+   stops growing at the xl breakpoint and sits as a small island of content in
+   the middle of a 2500px monitor. Media-query rem always resolves against the
+   initial 16px, so the breakpoints themselves do not move. */
+@media (min-width: 96rem) {
+  html {
+    font-size: clamp(1rem, calc(1rem + (100vw - 96rem) * 0.0072), 1.625rem);
+  }
 }
 
 /* Theme swap should feel like a dissolve, not a flash. */

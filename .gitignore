@@ -29,3 +29,8 @@ docs/
 
 # friends original asset - not mine, kept locally only
 src/assets/profile.jpeg
+
+# environment / secrets
+.env
+.env.*
+!.env.example

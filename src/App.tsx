@@ -6,6 +6,7 @@ import { ResearchSection } from './components/ResearchSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { ContactSection } from './components/ContactSection';
 import { FloatingThemeToggle } from './components/ThemeToggle';
+import { ChatWidget } from './components/ChatWidget';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <ExperienceSection />
       <ContactSection />
       <FloatingThemeToggle />
+      <ChatWidget />
     </div>
   );
 }

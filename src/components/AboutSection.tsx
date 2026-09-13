@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import profileImg from '../assets/profile.webp';
+import profileImg from '../assets/Atish-image.webp';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -75,12 +75,12 @@ export const AboutSection: React.FC = () => {
       <motion.div 
         animate={{ scale: [1, 1.2, 1], opacity: [0.08, 0.16, 0.08] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-1/4 left-1/6 w-[32rem] h-[32rem] bg-gold rounded-full blur-[160px] pointer-events-none"
+        className="absolute top-1/4 left-1/6 w-[32rem] h-[32rem] bg-gold rounded-full blur-[10rem] pointer-events-none"
       />
       <motion.div 
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.05, 0.12, 0.05] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-1/6 right-1/4 w-[28rem] h-[28rem] bg-bronze rounded-full blur-[170px] pointer-events-none"
+        className="absolute bottom-1/6 right-1/4 w-[28rem] h-[28rem] bg-bronze rounded-full blur-[10.625rem] pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
@@ -94,7 +94,7 @@ export const AboutSection: React.FC = () => {
           className="flex items-center space-x-4 mb-10"
         >
           <span 
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-gold"
+            className="text-[0.6875rem] font-medium tracking-[0.35em] uppercase text-gold"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             01 / ABOUT ME
@@ -131,7 +131,7 @@ export const AboutSection: React.FC = () => {
             {/* Concise Bio Paragraph */}
             <motion.p
               variants={fadeUpVariants}
-              className="text-xs sm:text-sm md:text-[14.5px] font-light text-fg-3 leading-[1.85] tracking-wide mb-10 max-w-xl"
+              className="text-xs sm:text-sm md:text-[0.90625rem] font-light text-fg-3 leading-[1.85] tracking-wide mb-10 max-w-xl"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               I'm <span className="text-gold-lite font-medium">Atish Kumar Sharma</span>, an AI/ML Engineer specializing in Generative AI, LLMs, RAG pipelines, fine-tuning, and multi-agent AI systems. I build and deploy end-to-end intelligent applications using modern AI frameworks, APIs, and MLOps practices &mdash; spanning AI agents, computer vision, NLP, backend APIs, and production-ready AI systems.
@@ -150,7 +150,7 @@ export const AboutSection: React.FC = () => {
                 >
                   99.77%
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-fg-4 mt-0.5">
+                <span className="text-[0.625rem] font-medium tracking-[0.22em] uppercase text-fg-4 mt-0.5">
                   Crop Ranking Accuracy
                 </span>
               </div>
@@ -163,7 +163,7 @@ export const AboutSection: React.FC = () => {
                 >
                   1531
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-fg-4 mt-0.5">
+                <span className="text-[0.625rem] font-medium tracking-[0.22em] uppercase text-fg-4 mt-0.5">
                   IIT JAM All India Rank
                 </span>
               </div>
@@ -176,7 +176,7 @@ export const AboutSection: React.FC = () => {
                 >
                   503
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-fg-4 mt-0.5">
+                <span className="text-[0.625rem] font-medium tracking-[0.22em] uppercase text-fg-4 mt-0.5">
                   Amazon ML Challenge AIR
                 </span>
               </div>
@@ -189,7 +189,7 @@ export const AboutSection: React.FC = () => {
                 >
                   15+
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-fg-4 mt-0.5">
+                <span className="text-[0.625rem] font-medium tracking-[0.22em] uppercase text-fg-4 mt-0.5">
                   Shipped AI Projects
                 </span>
               </div>
@@ -259,7 +259,8 @@ export const AboutSection: React.FC = () => {
               </div>
 
               {/* Portrait Image Canvas */}
-              <div className="relative overflow-hidden w-full max-w-[390px] aspect-[4/5] bg-ink rounded-sm">
+              <div data-on-stage
+                className="relative overflow-hidden w-full max-w-[24.375rem] aspect-[4/5] bg-frame rounded-sm">
                 {/* Main Portrait */}
                 <img
                   src={profileImg}
@@ -277,7 +278,7 @@ export const AboutSection: React.FC = () => {
                 />
 
                 {/* Bottom Film Noir Shadow */}
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-frame/90 via-frame/20 to-transparent pointer-events-none" />
 
                 {/* Monoline Signature */}
                 <div className="absolute bottom-4 right-4 z-20 select-none">

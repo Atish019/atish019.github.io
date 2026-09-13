@@ -150,8 +150,8 @@ export const SkillsSection: React.FC = () => {
       className="relative w-screen bg-ink text-fg-2 font-sans selection:bg-fg-3 selection:text-ink pt-8 pb-24 px-6 sm:px-12 lg:px-20 overflow-hidden flex flex-col justify-center"
     >
       {/* Ambient Glows */}
-      <div className="absolute top-1/3 left-1/4 w-[34rem] h-[34rem] bg-gold/5 rounded-full blur-[170px] pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-[28rem] h-[28rem] bg-bronze/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-[34rem] h-[34rem] bg-gold/5 rounded-full blur-[10.625rem] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-[28rem] h-[28rem] bg-bronze/5 rounded-full blur-[10rem] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
@@ -164,7 +164,7 @@ export const SkillsSection: React.FC = () => {
           className="flex items-center space-x-4 mb-7"
         >
           <span
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-gold"
+            className="text-[0.6875rem] font-medium tracking-[0.35em] uppercase text-gold"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             03 / TECH MATRIX
@@ -219,10 +219,10 @@ export const SkillsSection: React.FC = () => {
 
               {/* Card Meta Header */}
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-gold group-hover:text-gold-lite transition-colors">
+                <span className="text-[0.625rem] font-mono tracking-[0.25em] uppercase text-gold group-hover:text-gold-lite transition-colors">
                   {block.badge}
                 </span>
-                <span className="text-[10px] font-mono px-2.5 py-0.5 border border-bronze/40 text-fg-3 bg-surface-2 group-hover:border-gold/50 group-hover:text-fg transition-all">
+                <span className="text-[0.625rem] font-mono px-2.5 py-0.5 border border-bronze/40 text-fg-3 bg-surface-2 group-hover:border-gold/50 group-hover:text-fg transition-all">
                   {block.stat}
                 </span>
               </div>
@@ -248,7 +248,7 @@ export const SkillsSection: React.FC = () => {
                 {block.items.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3.5 py-1.5 text-[10.5px] font-medium tracking-[0.16em] uppercase rounded-sm border border-bronze/35 bg-surface-2 text-fg-2 group-hover:border-gold/50 group-hover:bg-surface-3 group-hover:text-fg transition-all duration-300"
+                    className="px-3.5 py-1.5 text-[0.65625rem] font-medium tracking-[0.16em] uppercase rounded-sm border border-bronze/35 bg-surface-2 text-fg-2 group-hover:border-gold/50 group-hover:bg-surface-3 group-hover:text-fg transition-all duration-300"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     {tech}
