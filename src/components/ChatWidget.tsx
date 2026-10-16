@@ -8,7 +8,7 @@ const GREETING =
   "Hi — I'm Atish 👋 Well, the AI twin I trained on my own work. Ask me about my projects, my LSTM crop-ranking research, my stack, or whether I'm open to work.";
 
 const OFFLINE =
-  "My AI twin isn't switched on right now. Reach me directly at atish.sharma6203@gmail.com or on LinkedIn — https://www.linkedin.com/in/atish-kr-sharma-85a2972a7/";
+  "My AI twin isn't switched on right now. Reach me directly at atish.sharma7321@gmail.com or on LinkedIn — https://www.linkedin.com/in/atish-kr-sharma-85a2972a7/";
 
 const SUGGESTIONS = [
   'What do you build?',
@@ -99,7 +99,7 @@ export function ChatWidget() {
       const reply = await askAssistant(question, history);
       push('assistant', reply);
     } catch (err) {
-      push('assistant', assistantErrorMessage(err, 'atish.sharma6203@gmail.com'));
+      push('assistant', assistantErrorMessage(err, 'atish.sharma7321@gmail.com'));
     } finally {
       setPending(false);
       inputRef.current?.focus();

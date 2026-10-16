@@ -12,7 +12,8 @@ import { motion } from 'framer-motion';
  */
 const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
 
-const EMAIL = 'atish.sharma6203@gmail.com';
+const EMAIL = 'atish.sharma7321@gmail.com';
+const RESUME_URL = `${import.meta.env.BASE_URL}Atish-Kumar-Sharma-Resume.pdf`;
 
 const socials = [
   { label: 'GITHUB', href: 'https://github.com/Atish019' },
@@ -135,6 +136,23 @@ export const ContactSection: React.FC = () => {
                 >
                   {EMAIL}
                 </a>
+
+                <div className="pt-4">
+                  <span className="block text-[0.59375rem] font-mono tracking-[0.2em] uppercase text-bronze mb-2">
+                    // RESUME
+                  </span>
+                  <a
+                    href={RESUME_URL}
+                    download
+                    className="group inline-flex items-center space-x-2 px-4 py-2.5 text-[0.625rem] font-medium tracking-[0.2em] uppercase rounded-sm border border-gold/60 bg-surface-1 text-grad-1 hover:border-gold hover:bg-gold/10 transition-all duration-300"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    <span>Download Resume</span>
+                    <span className="text-[0.5625rem] transition-transform duration-300 group-hover:translate-y-0.5">
+                      ↓
+                    </span>
+                  </a>
+                </div>
 
                 <div className="pt-4">
                   <span className="block text-[0.59375rem] font-mono tracking-[0.2em] uppercase text-bronze mb-2">
@@ -286,7 +304,7 @@ export const ContactSection: React.FC = () => {
         {/* System Footer Line */}
         <div className="pt-16 mt-16 border-t border-bronze/15 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-4">
           <span className="text-[0.625rem] font-mono tracking-widest text-bronze uppercase">
-            ATISH KUMAR SHARMA // AI &amp; ML ENGINEER
+            ATISH KUMAR SHARMA // AI &amp; ML ENGINEER &middot; DATA SCIENTIST
           </span>
           <span className="text-[0.625rem] font-mono text-bronze">
             © {new Date().getFullYear()} • BUILT &amp; DEPLOYED BY ATISH

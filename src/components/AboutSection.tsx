@@ -141,7 +141,7 @@ export const AboutSection: React.FC = () => {
               className="text-xs sm:text-sm md:text-[0.90625rem] font-light text-fg-3 leading-[1.85] tracking-wide mb-10 max-w-xl"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              I'm <span className="text-gold-lite font-medium">Atish Kumar Sharma</span>, an AI/ML Engineer specializing in Generative AI, LLMs, RAG pipelines, fine-tuning, and multi-agent AI systems. I build and deploy end-to-end intelligent applications using modern AI frameworks, APIs, and MLOps practices &mdash; spanning AI agents, computer vision, NLP, backend APIs, and production-ready AI systems.
+              I'm <span className="text-gold-lite font-medium">Atish Kumar Sharma</span>, an AI/ML Engineer and Data Scientist working across Generative AI, LLMs, RAG pipelines, fine-tuning, and multi-agent systems. At <span className="text-gold-lite font-medium">Qubittron</span> I build an enterprise AI agent and workflow automation platform &mdash; visual workflow builder, RAG knowledge bases, and A2A multi-agent orchestration. Alongside that, I ship end-to-end data science and ML work: EDA, feature engineering, model benchmarking, experiment tracking, and deployment &mdash; spanning computer vision, NLP, backend APIs, and production MLOps.
             </motion.p>
 
             {/* Concise 4-Item Achievement Metrics Grid */}

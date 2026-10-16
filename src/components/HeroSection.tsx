@@ -31,6 +31,8 @@ const fadeUpVariants: Variants = {
   },
 };
 
+const RESUME_URL = `${import.meta.env.BASE_URL}Atish-Kumar-Sharma-Resume.pdf`;
+
 // Soft-edge mask for the hero portrait: fades the left edge into the headline
 // side and the top/bottom into the stage. The two gradients are intersected so
 // every edge feathers at once.
@@ -324,7 +326,7 @@ export const HeroSection: React.FC = () => {
                 className="text-[0.625rem] sm:text-[0.6875rem] md:text-xs font-normal tracking-[0.28em] uppercase text-fg-3"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                AI/ML ENGINEER <span className="text-bronze mx-1">•</span> GENERATIVE AI <span className="text-bronze mx-1">•</span> AI AGENTS
+                AI/ML ENGINEER <span className="text-bronze mx-1">•</span> GENERATIVE AI <span className="text-bronze mx-1">•</span> DATA SCIENTIST
               </p>
             </motion.div>
 
@@ -335,16 +337,16 @@ export const HeroSection: React.FC = () => {
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <p>
-                I design LLM applications, RAG pipelines, and multi-agent systems.
+                I design LLM applications, RAG pipelines, multi-agent systems, and data-driven ML models.
                 <br />
-                From fine-tuning to deployment — research turned into production-ready intelligence.
+                From data and fine-tuning to deployment — research turned into production-ready intelligence.
               </p>
             </motion.div>
 
             {/* CTA Buttons */}
             <motion.div
               variants={fadeUpVariants}
-              className="flex flex-row items-center gap-4 sm:gap-6"
+              className="flex flex-row flex-wrap items-center gap-3 sm:gap-5"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <motion.a
@@ -373,6 +375,20 @@ export const HeroSection: React.FC = () => {
                 <span>GITHUB</span>
                 <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 text-xs">
                   ↗
+                </span>
+              </motion.a>
+
+              <motion.a
+                href={RESUME_URL}
+                download
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                whileHover={{ scale: 1.02 }}
+                className="relative inline-flex items-center space-x-2 px-6 sm:px-7 py-3.5 border border-bronze/40 hover:border-bronze text-fg-3 hover:text-fg-2 text-[0.6875rem] font-medium tracking-[0.24em] uppercase transition-all duration-300"
+              >
+                <span>RESUME</span>
+                <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs">
+                  ↓
                 </span>
               </motion.a>
             </motion.div>

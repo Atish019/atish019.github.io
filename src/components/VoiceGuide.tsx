@@ -79,7 +79,7 @@ export function VoiceGuide() {
       text = await askAssistant(question, historyRef.current, controller.signal);
     } catch (err) {
       if (controller.signal.aborted) return;
-      setNote(assistantErrorMessage(err, 'atish.sharma6203@gmail.com'));
+      setNote(assistantErrorMessage(err, 'atish.sharma7321@gmail.com'));
       setPhase('error');
       return;
     }

@@ -49,7 +49,7 @@ const projects: Project[] = [
     title: 'Post-Discharge Medical AI Assistant',
     category: 'GENERATIVE AI / MULTI-AGENT RAG',
     description:
-      'An intelligent multi-agent system built for post-discharge nephrology patient care. LangGraph agent workflows are combined with retrieval-augmented generation, vector search, and LLMs to deliver context-aware medical guidance grounded in real clinical documents.',
+      'An intelligent multi-agent system built for post-discharge nephrology patient care. LangGraph agent workflows are combined with retrieval-augmented generation, vector search, and LLMs to deliver context-aware medical guidance grounded in a 1,547-page clinical textbook indexed into 9,633 semantic chunks.',
     githubUrl: 'https://github.com/Atish019/Post-Discharge-Medical-AI-Assistant',
     tech: [
       'Python',
@@ -64,36 +64,36 @@ const projects: Project[] = [
     ],
     metrics: [
       { label: 'ORCHESTRATION', value: 'LangGraph Agents' },
-      { label: 'RETRIEVAL', value: 'ChromaDB RAG' },
+      { label: 'CORPUS', value: '9,633 Chunks' },
       { label: 'DEPLOYMENT', value: 'Docker / HF Spaces' },
     ],
   },
   {
     number: '03',
-    title: 'SciSynth-AI',
-    category: 'AI AGENTS / RESEARCH ASSISTANT',
+    title: 'Credit Card Fraud Detection',
+    category: 'DATA SCIENCE / MACHINE LEARNING',
     description:
-      'An AI research assistant that runs a team of specialized agents to search, analyze, and synthesize academic papers from arXiv. It identifies open research directions, generates new ideas, and compiles complete papers with mathematical equations rendered in LaTeX.',
-    githubUrl: 'https://github.com/Atish019/SciSynth-AI',
-    tech: ['Python', 'LangChain', 'LangGraph', 'arXiv API', 'Streamlit', 'Tectonic'],
+      'An end-to-end fraud detection pipeline built on a severely imbalanced transaction dataset. Exploratory analysis and feature engineering feed SMOTE-based resampling, several classifiers are benchmarked head-to-head, and every run is versioned with MLflow and DVC before shipping as a Dockerised dashboard.',
+    githubUrl: 'https://github.com/Atish019/credit_card_fraud_detection',
+    tech: ['Python', 'XGBoost', 'Scikit-learn', 'SMOTE', 'Pandas', 'MLflow', 'DVC', 'Docker'],
     metrics: [
-      { label: 'CORPUS', value: 'Live arXiv API' },
-      { label: 'PIPELINE', value: 'Multi-Agent Synthesis' },
-      { label: 'OUTPUT', value: 'LaTeX Papers' },
+      { label: 'BEST MODEL', value: 'XGBoost 97.61%' },
+      { label: 'IMBALANCE', value: 'SMOTE Resampling' },
+      { label: 'TRACKING', value: 'MLflow + DVC' },
     ],
   },
   {
     number: '04',
-    title: 'Gemma-2B LoRA Fine-tuning',
-    category: 'LLM FINE-TUNING / GENERATIVE AI',
+    title: 'Agriculture AI Crop Ranking',
+    category: 'DATA SCIENCE / DEEP LEARNING',
     description:
-      'Supervised fine-tuning of Google’s Gemma-2-2B on an English quotes dataset using LoRA. The project demonstrates memory-efficient LLM adaptation through low-rank parameter updates and 4-bit quantization — full-quality results on a single consumer GPU.',
-    githubUrl: 'https://github.com/Atish019/Gemma2b-LoRA-Finetuning-Quotes',
-    tech: ['Python', 'PyTorch', 'Hugging Face', 'Gemma-2-2B', 'LoRA', 'PEFT', '4-bit Quantization'],
+      'A soil- and environment-aware crop ranking engine. Seven agronomic parameters — N, P, K, temperature, humidity, pH and rainfall — run through EDA, correlation analysis and IQR outlier handling, then an LSTM converts the softmax distribution into a Top-K crop recommendation across 22 categories.',
+    githubUrl: 'https://github.com/Atish019/agriculture-ai-crop-ranking-system',
+    tech: ['Python', 'LSTM', 'TensorFlow', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
     metrics: [
-      { label: 'BASE MODEL', value: 'Gemma-2-2B' },
-      { label: 'METHOD', value: 'LoRA + PEFT' },
-      { label: 'PRECISION', value: '4-bit Quantized' },
+      { label: 'ACCURACY', value: '99.77% Validation' },
+      { label: 'CLASSES', value: '22 Crop Categories' },
+      { label: 'FEATURES', value: '7 Soil + Climate' },
     ],
   },
 ];
@@ -101,6 +101,24 @@ const projects: Project[] = [
 const sideProjects: SideProject[] = [
   {
     number: '05',
+    title: 'SciSynth-AI',
+    category: 'AI AGENTS / RESEARCH ASSISTANT',
+    description:
+      'An AI research assistant that runs a team of specialized agents to search, analyze, and synthesize academic papers from arXiv — identifying open research directions and compiling complete papers with LaTeX equations.',
+    githubUrl: 'https://github.com/Atish019/SciSynth-AI',
+    tech: ['LangChain', 'LangGraph', 'arXiv API', 'Streamlit'],
+  },
+  {
+    number: '06',
+    title: 'Gemma-2B LoRA Fine-tuning',
+    category: 'LLM FINE-TUNING / GENERATIVE AI',
+    description:
+      'Supervised fine-tuning of Google’s Gemma-2-2B on an English quotes dataset using LoRA with 4-bit quantization — full-quality adaptation on a single consumer GPU.',
+    githubUrl: 'https://github.com/Atish019/Gemma2b-LoRA-Finetuning-Quotes',
+    tech: ['PyTorch', 'Hugging Face', 'LoRA', 'PEFT'],
+  },
+  {
+    number: '07',
     title: 'Butterfly Semantic Segmentation',
     category: 'COMPUTER VISION / DEEP LEARNING',
     description:
@@ -110,16 +128,7 @@ const sideProjects: SideProject[] = [
     tech: ['U-Net', 'FastAPI', 'Docker', 'HF Spaces'],
   },
   {
-    number: '06',
-    title: 'Agriculture AI Crop Ranking',
-    category: 'MACHINE LEARNING / DEEP LEARNING',
-    description:
-      'An LSTM-based crop ranking engine that reads soil nutrients (N, P, K) and environmental signals — temperature, humidity, pH, rainfall — to recommend suitable crops. 99.77% validation accuracy across 22 crop categories.',
-    githubUrl: 'https://github.com/Atish019/agriculture-ai-crop-ranking-system',
-    tech: ['LSTM', 'Scikit-learn', 'Pandas', 'NumPy'],
-  },
-  {
-    number: '07',
+    number: '08',
     title: 'RAG Q&A Conversation',
     category: 'GENERATIVE AI / RAG',
     description:
@@ -128,22 +137,13 @@ const sideProjects: SideProject[] = [
     tech: ['LangChain', 'ChromaDB', 'Groq', 'Streamlit'],
   },
   {
-    number: '08',
+    number: '09',
     title: 'Custom YOLOv11 Object Detection',
     category: 'COMPUTER VISION / MLOPS',
     description:
       'An end-to-end custom object detection system covering model training, inference API development, Docker containerization, and production deployment on AWS.',
     githubUrl: 'https://github.com/Atish019/Custom_Training_YOLOv11_From_Scratch',
     tech: ['YOLOv11', 'FastAPI', 'Docker', 'AWS'],
-  },
-  {
-    number: '09',
-    title: 'Credit Card Fraud Detection',
-    category: 'MACHINE LEARNING / MLOPS',
-    description:
-      'An end-to-end fraud detection pipeline that handles severe class imbalance with SMOTE and benchmarks multiple models. XGBoost reached 97.61% accuracy, tracked through MLflow and shipped as a Dockerized dashboard.',
-    githubUrl: 'https://github.com/Atish019/credit_card_fraud_detection',
-    tech: ['XGBoost', 'MLflow', 'DVC', 'Docker'],
   },
   {
     number: '10',

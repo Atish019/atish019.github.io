@@ -13,6 +13,14 @@ interface RouteStop {
 const journey: RouteStop[] = [
   {
     id: '01',
+    year: 'FEB 2026 - PRESENT',
+    title: 'AI/ML ENGINEER',
+    organization: 'QUBITTRON (VIA VEDANGA SOFTSOL)',
+    description:
+      'Building an enterprise AI agent and workflow automation platform — a visual node-based workflow builder, RAG-powered Knowledge Bases with hybrid search, reranking and tabular retrieval, and multi-agent orchestration using Agent-to-Agent (A2A) communication over JSON-RPC. Built the database management and Workbench module on DuckDB so agents and workflows can query, join and analyse large CSV/XLSX datasets and multiple managed database sources. Implemented role-based access control across frontend and backend for workflows, agents, chats and knowledge bases, shipping production features with TypeScript, React, PostgreSQL, Drizzle ORM, Redis and Docker.',
+  },
+  {
+    id: '02',
     year: 'AUG 2024 - 2026',
     title: 'M.SC. AI & ML',
     organization: 'IIIT LUCKNOW',
@@ -20,15 +28,15 @@ const journey: RouteStop[] = [
       'Postgraduate study focused on Artificial Intelligence, Machine Learning, Deep Learning, Natural Language Processing (NLP), Computer Vision, Generative AI, Large Language Models (LLMs), Transformers, Retrieval-Augmented Generation (RAG), Reinforcement Learning, Data Structures & Algorithms, Data Mining, Big Data Analytics, MLOps, Model Deployment, Computer Networks, Database Management Systems, Cloud Computing, Software Engineering, and Advanced Backend Engineering.',
   },
   {
-    id: '02',
-    year: '2025',
+    id: '03',
+    year: 'APR 2025 - JUL 2025',
     title: 'AI INTERN',
     organization: 'EDUNET FOUNDATION',
     description:
       'Built and deployed AI applications including LLM-based chatbots, RAG systems, and multi-agent applications using Python, Docker, PostgreSQL, DuckDB, vector databases, LangChain, and modern AI/LLM frameworks.',
   },
   {
-    id: '03',
+    id: '04',
     year: '2025',
     title: 'AMAZON ML CHALLENGE - AIR 503',
     organization: 'AMAZON',
@@ -36,7 +44,7 @@ const journey: RouteStop[] = [
       'Secured Team All India Rank 503 in a nationwide machine learning competition.',
   },
   {
-    id: '04',
+    id: '05',
     year: '2024',
     title: 'IIT JAM - AIR 1531',
     organization: 'IIT JAM MATHEMATICS',
@@ -44,7 +52,7 @@ const journey: RouteStop[] = [
       'Secured All India Rank 1531 in Mathematics among 15,000+ candidates.',
   },
   {
-    id: '05',
+    id: '06',
     year: 'AUG 2019 - SEPT 2022',
     title: 'B.SC. MATHEMATICS (HONOURS)',
     organization: 'PATLIPUTRA UNIVERSITY, PATNA',

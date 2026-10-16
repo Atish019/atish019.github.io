@@ -12,15 +12,19 @@ export interface KnowledgeChunk {
 export const knowledgeBase: KnowledgeChunk[] = [
   {
     tags: 'who about intro bio yourself background summary profile atish sharma introduce hello hi hey namaste',
-    text: "I am Atish Kumar Sharma, an AI/ML Engineer based in Lucknow, India. I specialise in Generative AI, LLMs, RAG pipelines, LLM fine-tuning and multi-agent AI systems, and I build end-to-end intelligent applications — from model to deployed API. My core stack is Python, LangChain, LangGraph, PyTorch, TensorFlow, FastAPI, Groq, ChromaDB, Docker and AWS. I am currently doing my M.Sc. in Artificial Intelligence & Machine Learning at IIIT Lucknow.",
+    text: "I am Atish Kumar Sharma, an AI/ML Engineer and Data Scientist based in Lucknow, India. I currently work as an AI/ML Engineer at Qubittron (via Vedanga Softsol), building an enterprise AI agent and workflow automation platform. I specialise in Generative AI, LLMs, RAG pipelines, LLM fine-tuning, multi-agent AI systems and applied data science, and I build end-to-end intelligent applications — from data and model to deployed API. My core stack is Python, LangChain, LangGraph, PyTorch, TensorFlow, FastAPI, DuckDB, PostgreSQL, Groq, ChromaDB, Docker and AWS. I am also completing my M.Sc. in Artificial Intelligence & Machine Learning at IIIT Lucknow.",
   },
   {
     tags: 'education msc degree iiit lucknow masters bachelor bsc mathematics patliputra university study college academic',
     text: "Education: M.Sc. in Artificial Intelligence & Machine Learning at Indian Institute of Information Technology (IIIT) Lucknow, August 2024 to present — focused on AI, Machine Learning, Deep Learning, NLP, Computer Vision and Generative AI. Before that, B.Sc. Mathematics (Honours) from Patliputra University, Patna (August 2019 – September 2022), which gave me the mathematical foundation I lean on in ML work.",
   },
   {
-    tags: 'experience work job internship edunet foundation intern role company career hire hiring employment',
-    text: "Experience: AI Foundations Intern at Edunet Foundation (2025). I built and deployed AI applications there — LLM-based chatbots, RAG systems, multi-agent applications, and FastAPI/Streamlit solutions with vector database integration. I am currently open to AI/ML Engineer and Generative AI roles.",
+    tags: 'experience work job current company qubittron vedanga softsol role career hire hiring employment present job full time',
+    text: "Current role: AI/ML Engineer at Qubittron (via Vedanga Softsol), February 2026 to present. I am developing an enterprise AI agent and workflow automation platform — a visual node-based workflow builder, RAG-powered Knowledge Bases with hybrid search, reranking and tabular retrieval, and multi-agent orchestration using Agent-to-Agent (A2A) communication over JSON-RPC. I built the database management and Workbench module on DuckDB, which lets AI agents and workflows query, combine and analyse large CSV/XLSX datasets and multiple managed database sources. I also implemented role-based access control across frontend and backend for workflows, agents, chats and knowledge bases, shipping production features with TypeScript, React, PostgreSQL, Drizzle ORM, Redis and Docker.",
+  },
+  {
+    tags: 'internship edunet foundation intern 2025 previous experience training lora peft chatbot',
+    text: "Previous experience: AI Intern at Edunet Foundation, April 2025 to July 2025. I built and deployed LLM-based chatbots, RAG systems and multi-agent AI applications, fine-tuned open-source LLMs using LoRA/PEFT, and optimised prompts for production use, with FastAPI/Streamlit interfaces and vector database integration.",
   },
   {
     tags: 'achievements rank iit jam amazon ml challenge competition award air certification certificate simplilearn udemy credentials',
@@ -32,7 +36,7 @@ export const knowledgeBase: KnowledgeChunk[] = [
   },
   {
     tags: 'projects project portfolio work built showcase list all overview top best repositories github',
-    text: "I have shipped 15+ AI/ML projects. The featured four are: A2A Protocol (multi-agent communication), Post-Discharge Medical AI Assistant (multi-agent RAG for nephrology care), SciSynth-AI (autonomous research assistant), and Gemma-2B LoRA fine-tuning. Beyond those: Butterfly U-Net segmentation, Agriculture AI Crop Ranking, RAG Q&A Conversation, Custom YOLOv11 detection, Credit Card Fraud Detection, AI Lecture Transcriber, AI-Powered RAG Document Chatbot, Spark Data Lake, Pneumonia X-Ray Classification, Vehicle Detection & Counting, and a Movie Recommender System. All of them are at https://github.com/Atish019?tab=repositories — ask me about any one for details.",
+    text: "I have shipped 15+ AI/ML and data science projects. The featured four are: A2A Protocol (multi-agent communication), Post-Discharge Medical AI Assistant (multi-agent RAG for nephrology care), Credit Card Fraud Detection (data science / ML pipeline), and Agriculture AI Crop Ranking (LSTM-based data science project). Beyond those: SciSynth-AI, Gemma-2B LoRA fine-tuning, Butterfly U-Net segmentation, Agriculture AI Crop Ranking, RAG Q&A Conversation, Custom YOLOv11 detection, Credit Card Fraud Detection, AI Lecture Transcriber, AI-Powered RAG Document Chatbot, Spark Data Lake, Pneumonia X-Ray Classification, Vehicle Detection & Counting, and a Movie Recommender System. All of them are at https://github.com/Atish019?tab=repositories — ask me about any one for details.",
   },
   {
     tags: 'a2a protocol agent communication json-rpc agent cards bearer token multi-agent project',
@@ -79,8 +83,12 @@ export const knowledgeBase: KnowledgeChunk[] = [
     text: "More projects: AI-Powered RAG Document Chatbot (https://github.com/Atish019/AI-Powered-RAG-Document-Chatbot), Spark Data Lake for big-data pipelines (https://github.com/Atish019/spark-data-lake), Pneumonia X-Ray Classification with an Identity-Mapping ResFormer (https://github.com/Atish019/Pneumonia_X-Ray_Classification_using_Identity-Mapping_ResFormer), Vehicle Detection & Counting with OpenCV (https://github.com/Atish019/Vehicle-Detection-and-Counting-Using-OpenCV), and a Movie Recommender System (https://github.com/Atish019/movie-recommender-system).",
   },
   {
+    tags: 'data science data scientist analytics eda statistics feature engineering pandas visualisation analysis tabular sql duckdb',
+    text: "Data Science: I work across the full analysis-to-decision path — exploratory data analysis, correlation study, outlier handling with the IQR method, feature engineering, class-imbalance handling with SMOTE, model benchmarking and rigorous evaluation, with experiment tracking in MLflow and data versioning in DVC. Tools: Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, SQL, DuckDB, PostgreSQL, Apache Spark and Streamlit. My two data science flagship projects are Credit Card Fraud Detection (XGBoost at 97.61% accuracy on a severely imbalanced dataset) and the Agriculture AI Crop Ranking System (LSTM at 99.77% validation accuracy across 22 crop categories).",
+  },
+  {
     tags: 'skills stack tools technologies languages frameworks python langchain langgraph pytorch tensorflow know',
-    text: "Skills — Generative AI & Agents: LLMs, RAG, Agentic AI, Multi-Agent Systems, LangChain, LangGraph, LlamaIndex, LangSmith, Transformers, Prompt Engineering, LLM fine-tuning, LoRA, QLoRA, PEFT, Hugging Face, Groq, Gemma-2, LLaMA 3. ML & DL: Scikit-learn, PyTorch, TensorFlow, Keras, XGBoost, CNNs, RNNs, LSTM, GANs, ResNet, U-Net, YOLO. NLP & CV: BERT, GPT-2, spaCy, NER, text classification, OpenCV, object detection, image segmentation, Faster R-CNN. Backend & data: Python, C, SQL, FastAPI, REST APIs, PostgreSQL, MongoDB, MySQL, SQLite, ChromaDB, vector databases, Apache Spark. MLOps: Docker, Kubernetes, MLflow, DVC, GitHub Actions, CI/CD, AWS EC2 and S3, Hugging Face Spaces, Streamlit Cloud, Git.",
+    text: "Skills — Generative AI & Agents: LLMs, RAG, Agentic AI, Multi-Agent Systems, LangChain, LangGraph, LlamaIndex, LangSmith, Transformers, Prompt Engineering, LLM fine-tuning, LoRA, QLoRA, PEFT, Hugging Face, Groq, Gemma-2, LLaMA 3. ML & DL: Scikit-learn, PyTorch, TensorFlow, Keras, XGBoost, CNNs, RNNs, LSTM, GANs, ResNet, U-Net, YOLO. NLP & CV: BERT, GPT-2, spaCy, NER, text classification, OpenCV, object detection, image segmentation, Faster R-CNN. Data Science: EDA, statistics, feature engineering, SMOTE, outlier handling, model evaluation, Pandas, NumPy, Matplotlib, Seaborn. Backend & data: Python, C, SQL, TypeScript, FastAPI, REST APIs, React, Node.js, PostgreSQL, Drizzle ORM, Redis, DuckDB, MongoDB, MySQL, SQLite, ChromaDB, vector databases, Apache Spark, role-based access control. MLOps: Docker, Kubernetes, MLflow, DVC, GitHub Actions, CI/CD, AWS EC2 and S3, Hugging Face Spaces, Streamlit Cloud, Git.",
   },
   {
     tags: 'scratch implementation built from scratch architectures llm gan resnet inception vgg transformer',
@@ -88,6 +96,6 @@ export const knowledgeBase: KnowledgeChunk[] = [
   },
   {
     tags: 'contact email hire linkedin github kaggle huggingface resume reach location lucknow connect available remote opportunity',
-    text: "Contact: email atish.sharma6203@gmail.com. GitHub https://github.com/Atish019 · LinkedIn https://www.linkedin.com/in/atish-kr-sharma-85a2972a7/ · Hugging Face https://huggingface.co/Atish020 · Kaggle https://www.kaggle.com/atishshrma. I am based in Lucknow, India and open to remote work. I am happy to talk about AI/ML Engineer roles, Generative AI work, research collaborations and interesting agentic-AI problems.",
+    text: "Contact: email atish.sharma7321@gmail.com. My resume can be downloaded from the Contact section of this site, or directly at /Atish-Kumar-Sharma-Resume.pdf. GitHub https://github.com/Atish019 · LinkedIn https://www.linkedin.com/in/atish-kr-sharma-85a2972a7/ · Hugging Face https://huggingface.co/Atish020 · Kaggle https://www.kaggle.com/atishshrma. I am based in Lucknow, India and open to remote work. I am happy to talk about AI/ML Engineer, Generative AI and Data Scientist roles, research collaborations and interesting agentic-AI problems.",
   },
 ];

@@ -61,7 +61,7 @@ function systemPrompt(context: string): string {
     'LANGUAGE: reply in English by default. Switch to Hindi or Hinglish only if the visitor writes in Hindi or Hinglish, then mirror their style.',
     '',
     'RULES:',
-    '- Answer only from the CONTEXT below. If something is not there, say you would rather discuss it directly and give your email, atish.sharma6203@gmail.com.',
+    '- Answer only from the CONTEXT below. If something is not there, say you would rather discuss it directly and give your email, atish.sharma7321@gmail.com.',
     '- Keep replies short: 2 to 5 sentences unless the visitor asks for detail.',
     '- Share the plain URLs from the context when they are relevant.',
     '- Never invent projects, numbers, employers or dates that are not in the context.',

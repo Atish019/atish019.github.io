@@ -23,9 +23,14 @@ const bentoCategories = [
       'Groq',
       'Gemma-2',
       'LLaMA 3',
+      'A2A Protocol',
+      'JSON-RPC',
+      'Agent Cards',
+      'Hybrid Search',
+      'Reranking',
     ],
     description:
-      'Designing LLM applications end to end: retrieval-augmented generation, agent orchestration graphs, tool-calling workflows, and parameter-efficient fine-tuning of open-weight models.',
+      'Designing LLM applications end to end: retrieval-augmented generation with hybrid search and reranking, agent orchestration graphs, Agent-to-Agent protocols, tool-calling workflows, and parameter-efficient fine-tuning of open-weight models.',
     stat: 'RAG + AGENTS',
     colSpan: 'lg:col-span-7',
   },
@@ -52,6 +57,28 @@ const bentoCategories = [
     colSpan: 'lg:col-span-5',
   },
   {
+    title: 'DATA SCIENCE & ANALYTICS',
+    badge: 'INSIGHT',
+    items: [
+      'EDA',
+      'Feature Engineering',
+      'Statistics',
+      'Hypothesis Testing',
+      'Pandas',
+      'NumPy',
+      'Matplotlib',
+      'Seaborn',
+      'SMOTE',
+      'Outlier Handling',
+      'A/B Testing',
+      'Model Evaluation',
+    ],
+    description:
+      'Turning raw, messy tabular data into decisions — exploratory analysis, correlation and outlier treatment, class-imbalance handling, feature design, and rigorous evaluation before a single model ships.',
+    stat: 'DATA → DECISIONS',
+    colSpan: 'lg:col-span-5',
+  },
+  {
     title: 'NLP & COMPUTER VISION',
     badge: 'PERCEPTION',
     items: [
@@ -69,7 +96,7 @@ const bentoCategories = [
     description:
       'Teaching models to read and to see — from transformer-based language understanding to pixel-level segmentation and real-time detection pipelines.',
     stat: 'TEXT + VISION',
-    colSpan: 'lg:col-span-5',
+    colSpan: 'lg:col-span-7',
   },
   {
     title: 'PROGRAMMING, BACKEND & DATA',
@@ -87,7 +114,14 @@ const bentoCategories = [
       'SQLite',
       'ChromaDB',
       'Vector DBs',
+      'DuckDB',
       'Apache Spark',
+      'TypeScript',
+      'React',
+      'Node.js',
+      'Drizzle ORM',
+      'Redis',
+      'RBAC',
     ],
     description:
       'Clean, typed service layers that put models behind fast, well-documented APIs — with a mathematics background driving the reasoning underneath.',
@@ -113,7 +147,7 @@ const bentoCategories = [
     description:
       'Experiment tracking, data versioning, containerized inference, and automated pipelines that carry a model from notebook to production endpoint.',
     stat: 'CI/CD + CLOUD',
-    colSpan: 'lg:col-span-12',
+    colSpan: 'lg:col-span-5',
   },
 ];
 
